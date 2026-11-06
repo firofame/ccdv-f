@@ -2,6 +2,8 @@
 
 > **Interactive Certification Player, 117 Video Topics, 28 Follow-Along Labs, Domain Progress Tracking & Timestamped Markdown Notes.**
 
+🚀 **Live Deployment:** [https://firofame.github.io/ccdv-f/](https://firofame.github.io/ccdv-f/)
+
 A distraction-free, workplace-ready study portal built for engineers preparing for the **Anthropic Claude Certified Developer – Foundations (CCDV-F)** certification exam.
 
 Based on the official exam curriculum presented by **Andrew Brown (ExamPro)** on **freeCodeCamp** (Video ID: `C_1QKZAcJjk`, total duration: 7h 47m).
