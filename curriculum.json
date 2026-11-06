@@ -1,0 +1,1204 @@
+{
+  "domains": [
+    {
+      "id": "dom-000",
+      "code": "000",
+      "title": "Orientation & Introduction",
+      "topics": [
+        {
+          "id": "t-1",
+          "index": 1,
+          "timestamp": "00:00:00",
+          "timeSec": 0,
+          "title": "Introduction",
+          "isLab": false,
+          "domainCode": "000"
+        },
+        {
+          "id": "t-2",
+          "index": 2,
+          "timestamp": "00:06:49",
+          "timeSec": 409,
+          "title": "Exam Guide Breakdown",
+          "isLab": false,
+          "domainCode": "000"
+        }
+      ]
+    },
+    {
+      "id": "dom-010",
+      "code": "010",
+      "title": "Agent Architecture",
+      "topics": [
+        {
+          "id": "t-3",
+          "index": 3,
+          "timestamp": "00:11:29",
+          "timeSec": 689,
+          "title": "Agent Architecture",
+          "isLab": false,
+          "domainCode": "010"
+        },
+        {
+          "id": "t-4",
+          "index": 4,
+          "timestamp": "00:15:15",
+          "timeSec": 915,
+          "title": "Workflow Architecture",
+          "isLab": false,
+          "domainCode": "010"
+        },
+        {
+          "id": "t-5",
+          "index": 5,
+          "timestamp": "00:17:26",
+          "timeSec": 1046,
+          "title": "Multi Agent Architecture",
+          "isLab": false,
+          "domainCode": "010"
+        },
+        {
+          "id": "t-6",
+          "index": 6,
+          "timestamp": "01:06:54",
+          "timeSec": 4014,
+          "title": "Subagents Improving Task Execution",
+          "isLab": false,
+          "domainCode": "010"
+        }
+      ]
+    },
+    {
+      "id": "dom-020",
+      "code": "020",
+      "title": "Agent Construction with Claude",
+      "topics": [
+        {
+          "id": "t-7",
+          "index": 7,
+          "timestamp": "01:10:35",
+          "timeSec": 4235,
+          "title": "Agent SDK",
+          "isLab": false,
+          "domainCode": "020"
+        },
+        {
+          "id": "t-8",
+          "index": 8,
+          "timestamp": "01:11:47",
+          "timeSec": 4307,
+          "title": "Agent SDK Follow Along",
+          "isLab": true,
+          "domainCode": "020"
+        },
+        {
+          "id": "t-9",
+          "index": 9,
+          "timestamp": "01:17:04",
+          "timeSec": 4624,
+          "title": "What is a Code Harness",
+          "isLab": false,
+          "domainCode": "020"
+        },
+        {
+          "id": "t-10",
+          "index": 10,
+          "timestamp": "01:18:19",
+          "timeSec": 4699,
+          "title": "PreToolUse and PostToolUse Hooks",
+          "isLab": false,
+          "domainCode": "020"
+        },
+        {
+          "id": "t-11",
+          "index": 11,
+          "timestamp": "01:19:17",
+          "timeSec": 4757,
+          "title": "PreToolUse and PostToolUse Hooks Follow Along",
+          "isLab": true,
+          "domainCode": "020"
+        },
+        {
+          "id": "t-12",
+          "index": 12,
+          "timestamp": "01:23:28",
+          "timeSec": 5008,
+          "title": "Claude Managed Agents Follow Along",
+          "isLab": true,
+          "domainCode": "020"
+        }
+      ]
+    },
+    {
+      "id": "dom-030",
+      "code": "030",
+      "title": "Agent Patterns and Frameworks",
+      "topics": [
+        {
+          "id": "t-13",
+          "index": 13,
+          "timestamp": "01:43:01",
+          "timeSec": 6181,
+          "title": "The Agentic Loop",
+          "isLab": false,
+          "domainCode": "030"
+        },
+        {
+          "id": "t-14",
+          "index": 14,
+          "timestamp": "01:44:49",
+          "timeSec": 6289,
+          "title": "The Agentic Loop Tool Calls",
+          "isLab": false,
+          "domainCode": "030"
+        }
+      ]
+    },
+    {
+      "id": "dom-040",
+      "code": "040",
+      "title": "Claude API Mechanics",
+      "topics": [
+        {
+          "id": "t-15",
+          "index": 15,
+          "timestamp": "01:48:16",
+          "timeSec": 6496,
+          "title": "Claude Messages and Content",
+          "isLab": false,
+          "domainCode": "040"
+        },
+        {
+          "id": "t-16",
+          "index": 16,
+          "timestamp": "01:50:24",
+          "timeSec": 6624,
+          "title": "Claude Messages System Prompt",
+          "isLab": false,
+          "domainCode": "040"
+        },
+        {
+          "id": "t-17",
+          "index": 17,
+          "timestamp": "01:52:40",
+          "timeSec": 6760,
+          "title": "Claude Messages Response Format",
+          "isLab": false,
+          "domainCode": "040"
+        },
+        {
+          "id": "t-18",
+          "index": 18,
+          "timestamp": "01:53:56",
+          "timeSec": 6836,
+          "title": "Max Tokens",
+          "isLab": false,
+          "domainCode": "040"
+        },
+        {
+          "id": "t-19",
+          "index": 19,
+          "timestamp": "01:54:58",
+          "timeSec": 6898,
+          "title": "Stop Reason",
+          "isLab": false,
+          "domainCode": "040"
+        },
+        {
+          "id": "t-20",
+          "index": 20,
+          "timestamp": "01:57:48",
+          "timeSec": 7068,
+          "title": "Streaming Messages",
+          "isLab": false,
+          "domainCode": "040"
+        },
+        {
+          "id": "t-21",
+          "index": 21,
+          "timestamp": "01:59:39",
+          "timeSec": 7179,
+          "title": "Claude Code Image Reasoning",
+          "isLab": false,
+          "domainCode": "040"
+        },
+        {
+          "id": "t-22",
+          "index": 22,
+          "timestamp": "02:01:14",
+          "timeSec": 7274,
+          "title": "Claude Code Image Reasoning Follow Along",
+          "isLab": true,
+          "domainCode": "040"
+        },
+        {
+          "id": "t-23",
+          "index": 23,
+          "timestamp": "02:05:43",
+          "timeSec": 7543,
+          "title": "Prompt Caching",
+          "isLab": false,
+          "domainCode": "040"
+        },
+        {
+          "id": "t-24",
+          "index": 24,
+          "timestamp": "02:08:53",
+          "timeSec": 7733,
+          "title": "Claude Code API Key via Third Party Providers",
+          "isLab": false,
+          "domainCode": "040"
+        },
+        {
+          "id": "t-25",
+          "index": 25,
+          "timestamp": "02:09:40",
+          "timeSec": 7780,
+          "title": "Batch Processing Follow Along",
+          "isLab": true,
+          "domainCode": "040"
+        },
+        {
+          "id": "t-26",
+          "index": 26,
+          "timestamp": "02:15:14",
+          "timeSec": 8114,
+          "title": "Real Time vs Batch API",
+          "isLab": false,
+          "domainCode": "040"
+        }
+      ]
+    },
+    {
+      "id": "dom-050",
+      "code": "050",
+      "title": "Software Engineering Foundations",
+      "topics": [
+        {
+          "id": "t-27",
+          "index": 27,
+          "timestamp": "02:16:28",
+          "timeSec": 8188,
+          "title": "Semi structure JSON",
+          "isLab": false,
+          "domainCode": "050"
+        },
+        {
+          "id": "t-28",
+          "index": 28,
+          "timestamp": "02:17:23",
+          "timeSec": 8243,
+          "title": "Version Control Systems",
+          "isLab": false,
+          "domainCode": "050"
+        },
+        {
+          "id": "t-29",
+          "index": 29,
+          "timestamp": "02:19:26",
+          "timeSec": 8366,
+          "title": "Version Control Services",
+          "isLab": false,
+          "domainCode": "050"
+        },
+        {
+          "id": "t-30",
+          "index": 30,
+          "timestamp": "02:22:44",
+          "timeSec": 8564,
+          "title": "Code Review",
+          "isLab": false,
+          "domainCode": "050"
+        },
+        {
+          "id": "t-31",
+          "index": 31,
+          "timestamp": "02:23:45",
+          "timeSec": 8625,
+          "title": "Simplify Command",
+          "isLab": false,
+          "domainCode": "050"
+        }
+      ]
+    },
+    {
+      "id": "dom-060",
+      "code": "060",
+      "title": "Claude Application Design",
+      "topics": [
+        {
+          "id": "t-32",
+          "index": 32,
+          "timestamp": "02:24:36",
+          "timeSec": 8676,
+          "title": "Claude Code Surfaces",
+          "isLab": false,
+          "domainCode": "060"
+        },
+        {
+          "id": "t-33",
+          "index": 33,
+          "timestamp": "02:25:56",
+          "timeSec": 8756,
+          "title": "Content Boundaries",
+          "isLab": false,
+          "domainCode": "060"
+        },
+        {
+          "id": "t-34",
+          "index": 34,
+          "timestamp": "02:28:06",
+          "timeSec": 8886,
+          "title": "Session Hygiene",
+          "isLab": false,
+          "domainCode": "060"
+        },
+        {
+          "id": "t-35",
+          "index": 35,
+          "timestamp": "02:30:17",
+          "timeSec": 9017,
+          "title": "Plugins",
+          "isLab": false,
+          "domainCode": "060"
+        }
+      ]
+    },
+    {
+      "id": "dom-070",
+      "code": "070",
+      "title": "Configuration Management",
+      "topics": [
+        {
+          "id": "t-36",
+          "index": 36,
+          "timestamp": "02:34:19",
+          "timeSec": 9259,
+          "title": "CLAUDE md Files",
+          "isLab": false,
+          "domainCode": "070"
+        },
+        {
+          "id": "t-37",
+          "index": 37,
+          "timestamp": "02:36:58",
+          "timeSec": 9418,
+          "title": "Claude Code Settings Scope",
+          "isLab": false,
+          "domainCode": "070"
+        },
+        {
+          "id": "t-38",
+          "index": 38,
+          "timestamp": "02:38:50",
+          "timeSec": 9530,
+          "title": "Claude Code Settings",
+          "isLab": false,
+          "domainCode": "070"
+        },
+        {
+          "id": "t-39",
+          "index": 39,
+          "timestamp": "02:50:49",
+          "timeSec": 10249,
+          "title": "Model version pinning",
+          "isLab": false,
+          "domainCode": "070"
+        },
+        {
+          "id": "t-40",
+          "index": 40,
+          "timestamp": "03:05:54",
+          "timeSec": 11154,
+          "title": "Prompt Versions",
+          "isLab": false,
+          "domainCode": "070"
+        }
+      ]
+    },
+    {
+      "id": "dom-080",
+      "code": "080",
+      "title": "Claude Code Operations",
+      "topics": [
+        {
+          "id": "t-41",
+          "index": 41,
+          "timestamp": "03:05:58",
+          "timeSec": 11158,
+          "title": "Claude Rules",
+          "isLab": false,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-42",
+          "index": 42,
+          "timestamp": "03:06:51",
+          "timeSec": 11211,
+          "title": "Claude Rules Follow Along",
+          "isLab": true,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-43",
+          "index": 43,
+          "timestamp": "03:19:31",
+          "timeSec": 11971,
+          "title": "Agent Skills",
+          "isLab": false,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-44",
+          "index": 44,
+          "timestamp": "03:21:49",
+          "timeSec": 12109,
+          "title": "Skills Follow Along",
+          "isLab": true,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-45",
+          "index": 45,
+          "timestamp": "03:32:41",
+          "timeSec": 12761,
+          "title": "Resume Command",
+          "isLab": false,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-46",
+          "index": 46,
+          "timestamp": "03:33:30",
+          "timeSec": 12810,
+          "title": "Resume Command Follow Along",
+          "isLab": true,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-47",
+          "index": 47,
+          "timestamp": "03:37:42",
+          "timeSec": 13062,
+          "title": "Fork Session",
+          "isLab": false,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-48",
+          "index": 48,
+          "timestamp": "03:38:20",
+          "timeSec": 13100,
+          "title": "Fork Session Follow Along",
+          "isLab": true,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-49",
+          "index": 49,
+          "timestamp": "03:40:40",
+          "timeSec": 13240,
+          "title": "Context Command",
+          "isLab": false,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-50",
+          "index": 50,
+          "timestamp": "03:42:09",
+          "timeSec": 13329,
+          "title": "Rename and Rewind",
+          "isLab": false,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-51",
+          "index": 51,
+          "timestamp": "03:43:14",
+          "timeSec": 13394,
+          "title": "Rename and Rewind Follow Along",
+          "isLab": true,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-52",
+          "index": 52,
+          "timestamp": "03:45:10",
+          "timeSec": 13510,
+          "title": "Status Command",
+          "isLab": false,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-53",
+          "index": 53,
+          "timestamp": "03:48:16",
+          "timeSec": 13696,
+          "title": "Security Review Command",
+          "isLab": false,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-54",
+          "index": 54,
+          "timestamp": "03:49:22",
+          "timeSec": 13762,
+          "title": "Sub agents",
+          "isLab": false,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-55",
+          "index": 55,
+          "timestamp": "03:51:25",
+          "timeSec": 13885,
+          "title": "Sub agents Follow Along",
+          "isLab": true,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-56",
+          "index": 56,
+          "timestamp": "03:59:50",
+          "timeSec": 14390,
+          "title": "Claude Auto Memory",
+          "isLab": false,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-57",
+          "index": 57,
+          "timestamp": "04:02:13",
+          "timeSec": 14533,
+          "title": "Claude Auto Memory Follow Along",
+          "isLab": true,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-58",
+          "index": 58,
+          "timestamp": "04:06:07",
+          "timeSec": 14767,
+          "title": "Claude Code Sessions",
+          "isLab": false,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-59",
+          "index": 59,
+          "timestamp": "04:07:08",
+          "timeSec": 14828,
+          "title": "Headless Tasks",
+          "isLab": false,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-60",
+          "index": 60,
+          "timestamp": "04:09:06",
+          "timeSec": 14946,
+          "title": "Headless Tasks Follow Along",
+          "isLab": true,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-61",
+          "index": 61,
+          "timestamp": "04:16:39",
+          "timeSec": 15399,
+          "title": "Enable Auto Mode",
+          "isLab": false,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-62",
+          "index": 62,
+          "timestamp": "04:17:51",
+          "timeSec": 15471,
+          "title": "Enable Auto Mode Follow Along",
+          "isLab": true,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-63",
+          "index": 63,
+          "timestamp": "04:23:28",
+          "timeSec": 15808,
+          "title": "Top Level Claude md File",
+          "isLab": false,
+          "domainCode": "080"
+        },
+        {
+          "id": "t-64",
+          "index": 64,
+          "timestamp": "04:24:17",
+          "timeSec": 15857,
+          "title": "Claude files Follow Along",
+          "isLab": true,
+          "domainCode": "080"
+        }
+      ]
+    },
+    {
+      "id": "dom-090",
+      "code": "090",
+      "title": "Debugging and Error Handling",
+      "topics": [
+        {
+          "id": "t-65",
+          "index": 65,
+          "timestamp": "04:38:23",
+          "timeSec": 16703,
+          "title": "Debug Mode",
+          "isLab": false,
+          "domainCode": "090"
+        },
+        {
+          "id": "t-66",
+          "index": 66,
+          "timestamp": "04:39:25",
+          "timeSec": 16765,
+          "title": "Debug Mode Follow Along",
+          "isLab": true,
+          "domainCode": "090"
+        }
+      ]
+    },
+    {
+      "id": "dom-100",
+      "code": "100",
+      "title": "LLM Fundamentals",
+      "topics": [
+        {
+          "id": "t-67",
+          "index": 67,
+          "timestamp": "04:42:14",
+          "timeSec": 16934,
+          "title": "Tokens and Capacity",
+          "isLab": false,
+          "domainCode": "100"
+        },
+        {
+          "id": "t-68",
+          "index": 68,
+          "timestamp": "04:44:37",
+          "timeSec": 17077,
+          "title": "Context Window Size",
+          "isLab": false,
+          "domainCode": "100"
+        },
+        {
+          "id": "t-69",
+          "index": 69,
+          "timestamp": "04:46:55",
+          "timeSec": 17215,
+          "title": "Sampling",
+          "isLab": false,
+          "domainCode": "100"
+        },
+        {
+          "id": "t-70",
+          "index": 70,
+          "timestamp": "04:49:29",
+          "timeSec": 17369,
+          "title": "Non determinism",
+          "isLab": false,
+          "domainCode": "100"
+        },
+        {
+          "id": "t-71",
+          "index": 71,
+          "timestamp": "04:51:00",
+          "timeSec": 17460,
+          "title": "What is a Large Language Model",
+          "isLab": false,
+          "domainCode": "100"
+        },
+        {
+          "id": "t-72",
+          "index": 72,
+          "timestamp": "04:52:44",
+          "timeSec": 17564,
+          "title": "Fast Command",
+          "isLab": false,
+          "domainCode": "100"
+        },
+        {
+          "id": "t-73",
+          "index": 73,
+          "timestamp": "04:53:12",
+          "timeSec": 17592,
+          "title": "Fast Mode Follow Along",
+          "isLab": true,
+          "domainCode": "100"
+        },
+        {
+          "id": "t-74",
+          "index": 74,
+          "timestamp": "04:56:48",
+          "timeSec": 17808,
+          "title": "Effort Command",
+          "isLab": false,
+          "domainCode": "100"
+        },
+        {
+          "id": "t-75",
+          "index": 75,
+          "timestamp": "04:58:42",
+          "timeSec": 17922,
+          "title": "Effort Follow Along",
+          "isLab": true,
+          "domainCode": "100"
+        },
+        {
+          "id": "t-76",
+          "index": 76,
+          "timestamp": "05:04:45",
+          "timeSec": 18285,
+          "title": "Zero Single and Multi Shot",
+          "isLab": false,
+          "domainCode": "100"
+        }
+      ]
+    },
+    {
+      "id": "dom-110",
+      "code": "110",
+      "title": "Model Selection and Tradeoffs",
+      "topics": [
+        {
+          "id": "t-77",
+          "index": 77,
+          "timestamp": "05:07:17",
+          "timeSec": 18437,
+          "title": "The Agentic Loop Models",
+          "isLab": false,
+          "domainCode": "110"
+        },
+        {
+          "id": "t-78",
+          "index": 78,
+          "timestamp": "05:09:26",
+          "timeSec": 18566,
+          "title": "Adaptive Thinking Support",
+          "isLab": false,
+          "domainCode": "110"
+        },
+        {
+          "id": "t-79",
+          "index": 79,
+          "timestamp": "05:11:56",
+          "timeSec": 18716,
+          "title": "Extended Thinking vs Adaptive Thinking",
+          "isLab": false,
+          "domainCode": "110"
+        }
+      ]
+    },
+    {
+      "id": "dom-120",
+      "code": "120",
+      "title": "Cost and Token Management",
+      "topics": [
+        {
+          "id": "t-80",
+          "index": 80,
+          "timestamp": "05:13:56",
+          "timeSec": 18836,
+          "title": "Token Count API",
+          "isLab": false,
+          "domainCode": "120"
+        },
+        {
+          "id": "t-81",
+          "index": 81,
+          "timestamp": "05:14:53",
+          "timeSec": 18893,
+          "title": "Cost Modeling",
+          "isLab": false,
+          "domainCode": "120"
+        },
+        {
+          "id": "t-82",
+          "index": 82,
+          "timestamp": "05:16:42",
+          "timeSec": 19002,
+          "title": "Prompt Caching Costs",
+          "isLab": false,
+          "domainCode": "120"
+        }
+      ]
+    },
+    {
+      "id": "dom-130",
+      "code": "130",
+      "title": "Context Engineering",
+      "topics": [
+        {
+          "id": "t-83",
+          "index": 83,
+          "timestamp": "05:17:46",
+          "timeSec": 19066,
+          "title": "Tool Output Pruning",
+          "isLab": false,
+          "domainCode": "130"
+        },
+        {
+          "id": "t-84",
+          "index": 84,
+          "timestamp": "05:20:31",
+          "timeSec": 19231,
+          "title": "Compact and Clear Command",
+          "isLab": false,
+          "domainCode": "130"
+        },
+        {
+          "id": "t-85",
+          "index": 85,
+          "timestamp": "05:22:05",
+          "timeSec": 19325,
+          "title": "Compact and Clear Follow Along",
+          "isLab": true,
+          "domainCode": "130"
+        }
+      ]
+    },
+    {
+      "id": "dom-140",
+      "code": "140",
+      "title": "Prompt Engineering",
+      "topics": [
+        {
+          "id": "t-86",
+          "index": 86,
+          "timestamp": "05:27:19",
+          "timeSec": 19639,
+          "title": "Prompting with Explicit Criteria",
+          "isLab": false,
+          "domainCode": "140"
+        },
+        {
+          "id": "t-87",
+          "index": 87,
+          "timestamp": "05:28:21",
+          "timeSec": 19701,
+          "title": "Few Shot Prompting",
+          "isLab": false,
+          "domainCode": "140"
+        },
+        {
+          "id": "t-88",
+          "index": 88,
+          "timestamp": "05:29:23",
+          "timeSec": 19763,
+          "title": "Structured JSON Generation",
+          "isLab": false,
+          "domainCode": "140"
+        },
+        {
+          "id": "t-89",
+          "index": 89,
+          "timestamp": "05:33:04",
+          "timeSec": 19984,
+          "title": "Refinement Loop",
+          "isLab": false,
+          "domainCode": "140"
+        },
+        {
+          "id": "t-90",
+          "index": 90,
+          "timestamp": "05:33:58",
+          "timeSec": 20038,
+          "title": "Refinement Loop Follow Along",
+          "isLab": true,
+          "domainCode": "140"
+        }
+      ]
+    },
+    {
+      "id": "dom-160",
+      "code": "160",
+      "title": "AI Application Security",
+      "topics": [
+        {
+          "id": "t-91",
+          "index": 91,
+          "timestamp": "05:45:53",
+          "timeSec": 20753,
+          "title": "Prompt Injection Awareness and Mitigation",
+          "isLab": false,
+          "domainCode": "160"
+        },
+        {
+          "id": "t-92",
+          "index": 92,
+          "timestamp": "05:52:21",
+          "timeSec": 21141,
+          "title": "Data Leakage Prevention and PII Handling",
+          "isLab": false,
+          "domainCode": "160"
+        }
+      ]
+    },
+    {
+      "id": "dom-170",
+      "code": "170",
+      "title": "Guardrails and Safe Deployment",
+      "topics": [
+        {
+          "id": "t-93",
+          "index": 93,
+          "timestamp": "05:54:00",
+          "timeSec": 21240,
+          "title": "Permission Rules",
+          "isLab": false,
+          "domainCode": "170"
+        },
+        {
+          "id": "t-94",
+          "index": 94,
+          "timestamp": "05:55:31",
+          "timeSec": 21331,
+          "title": "Permission Rules Follow Along",
+          "isLab": true,
+          "domainCode": "170"
+        },
+        {
+          "id": "t-95",
+          "index": 95,
+          "timestamp": "06:10:01",
+          "timeSec": 22201,
+          "title": "Sandboxing",
+          "isLab": false,
+          "domainCode": "170"
+        },
+        {
+          "id": "t-96",
+          "index": 96,
+          "timestamp": "06:12:03",
+          "timeSec": 22323,
+          "title": "Sandbox Follow Along",
+          "isLab": true,
+          "domainCode": "170"
+        },
+        {
+          "id": "t-97",
+          "index": 97,
+          "timestamp": "06:19:54",
+          "timeSec": 22794,
+          "title": "Hooks",
+          "isLab": false,
+          "domainCode": "170"
+        },
+        {
+          "id": "t-98",
+          "index": 98,
+          "timestamp": "06:21:33",
+          "timeSec": 22893,
+          "title": "Security Hook Follow Along",
+          "isLab": true,
+          "domainCode": "170"
+        }
+      ]
+    },
+    {
+      "id": "dom-180",
+      "code": "180",
+      "title": "Identity Secrets and Key Management",
+      "topics": [
+        {
+          "id": "t-99",
+          "index": 99,
+          "timestamp": "06:58:51",
+          "timeSec": 25131,
+          "title": "Claude Code via API Key",
+          "isLab": false,
+          "domainCode": "180"
+        },
+        {
+          "id": "t-100",
+          "index": 100,
+          "timestamp": "06:59:57",
+          "timeSec": 25197,
+          "title": "Permission Modes",
+          "isLab": false,
+          "domainCode": "180"
+        },
+        {
+          "id": "t-101",
+          "index": 101,
+          "timestamp": "07:01:33",
+          "timeSec": 25293,
+          "title": "Permission Modes Follow Along",
+          "isLab": true,
+          "domainCode": "180"
+        },
+        {
+          "id": "t-102",
+          "index": 102,
+          "timestamp": "07:05:35",
+          "timeSec": 25535,
+          "title": "Authentication vs Authorization",
+          "isLab": false,
+          "domainCode": "180"
+        }
+      ]
+    },
+    {
+      "id": "dom-190",
+      "code": "190",
+      "title": "Tool Implementation",
+      "topics": [
+        {
+          "id": "t-103",
+          "index": 103,
+          "timestamp": "07:08:02",
+          "timeSec": 25682,
+          "title": "Tool Choice",
+          "isLab": false,
+          "domainCode": "190"
+        },
+        {
+          "id": "t-104",
+          "index": 104,
+          "timestamp": "07:10:08",
+          "timeSec": 25808,
+          "title": "Tool Descriptions",
+          "isLab": false,
+          "domainCode": "190"
+        },
+        {
+          "id": "t-105",
+          "index": 105,
+          "timestamp": "07:11:05",
+          "timeSec": 25865,
+          "title": "Error handling",
+          "isLab": false,
+          "domainCode": "190"
+        },
+        {
+          "id": "t-106",
+          "index": 106,
+          "timestamp": "07:11:49",
+          "timeSec": 25909,
+          "title": "Agent Tool",
+          "isLab": false,
+          "domainCode": "190"
+        },
+        {
+          "id": "t-107",
+          "index": 107,
+          "timestamp": "07:14:22",
+          "timeSec": 26062,
+          "title": "Agent Tool Follow Along",
+          "isLab": true,
+          "domainCode": "190"
+        }
+      ]
+    },
+    {
+      "id": "dom-200",
+      "code": "200",
+      "title": "MCP Server Deployment",
+      "topics": [
+        {
+          "id": "t-108",
+          "index": 108,
+          "timestamp": "07:25:44",
+          "timeSec": 26744,
+          "title": "MCP with Claude Code",
+          "isLab": false,
+          "domainCode": "200"
+        },
+        {
+          "id": "t-109",
+          "index": 109,
+          "timestamp": "07:27:52",
+          "timeSec": 26872,
+          "title": "MCP Resources vs Tools",
+          "isLab": false,
+          "domainCode": "200"
+        },
+        {
+          "id": "t-110",
+          "index": 110,
+          "timestamp": "07:29:12",
+          "timeSec": 26952,
+          "title": "MCP Resources vs Tools Follow Along",
+          "isLab": true,
+          "domainCode": "200"
+        },
+        {
+          "id": "t-111",
+          "index": 111,
+          "timestamp": "07:37:23",
+          "timeSec": 27443,
+          "title": "MCP Prompts",
+          "isLab": false,
+          "domainCode": "200"
+        },
+        {
+          "id": "t-112",
+          "index": 112,
+          "timestamp": "07:38:08",
+          "timeSec": 27488,
+          "title": "Setup Claude Platform on AWS",
+          "isLab": false,
+          "domainCode": "200"
+        }
+      ]
+    },
+    {
+      "id": "dom-210",
+      "code": "210",
+      "title": "Agent Customization",
+      "topics": [
+        {
+          "id": "t-113",
+          "index": 113,
+          "timestamp": "07:39:34",
+          "timeSec": 27574,
+          "title": "Built In Tools",
+          "isLab": false,
+          "domainCode": "210"
+        },
+        {
+          "id": "t-114",
+          "index": 114,
+          "timestamp": "07:41:06",
+          "timeSec": 27666,
+          "title": "Built In Tools Follow Along",
+          "isLab": true,
+          "domainCode": "210"
+        },
+        {
+          "id": "t-115",
+          "index": 115,
+          "timestamp": "07:44:34",
+          "timeSec": 27874,
+          "title": "Custom Tools",
+          "isLab": false,
+          "domainCode": "210"
+        },
+        {
+          "id": "t-116",
+          "index": 116,
+          "timestamp": "07:45:15",
+          "timeSec": 27915,
+          "title": "MCP Discovery",
+          "isLab": false,
+          "domainCode": "210"
+        },
+        {
+          "id": "t-117",
+          "index": 117,
+          "timestamp": "07:46:06",
+          "timeSec": 27966,
+          "title": "MCP Discovery Follow Along",
+          "isLab": true,
+          "domainCode": "210"
+        }
+      ]
+    }
+  ]
+}

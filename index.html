@@ -1,0 +1,2576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anthropic CCDV-F Certification Portal | Claude Certified Developer - Foundations</title>
+  <meta name="description" content="Comprehensive certification preparation portal for Anthropic Claude Certified Developer - Foundations (CCDV-F), featuring 117 video topics, 28 follow-along labs, domain progress tracking, and interactive timestamped markdown notes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #090d16;
+      --card-bg: #111827;
+      --card-surface: #172237;
+      --card-border: #1f2d45;
+      --card-border-subtle: #192438;
+      --text-main: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent-coral: #ea580c;
+      --accent-coral-glow: rgba(234, 88, 12, 0.25);
+      --accent-blue: #38bdf8;
+      --accent-blue-glow: rgba(56, 189, 248, 0.2);
+      --accent-emerald: #10b981;
+      --accent-emerald-glow: rgba(16, 185, 129, 0.2);
+      --accent-amber: #f59e0b;
+      --input-bg: #0b111e;
+      --input-border: #23334d;
+      --active-topic-bg: rgba(56, 189, 248, 0.12);
+      --active-topic-border: #38bdf8;
+      --lab-badge-bg: rgba(245, 158, 11, 0.15);
+      --lab-badge-border: rgba(245, 158, 11, 0.4);
+      --lab-badge-text: #fbbf24;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    [data-theme="light"] {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --card-surface: #f1f5f9;
+      --card-border: #e2e8f0;
+      --card-border-subtle: #cbd5e1;
+      --text-main: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --accent-coral: #c2410c;
+      --accent-coral-glow: rgba(194, 65, 12, 0.15);
+      --accent-blue: #0284c7;
+      --accent-blue-glow: rgba(2, 132, 199, 0.15);
+      --accent-emerald: #059669;
+      --accent-emerald-glow: rgba(5, 150, 105, 0.15);
+      --accent-amber: #d97706;
+      --input-bg: #ffffff;
+      --input-border: #cbd5e1;
+      --active-topic-bg: rgba(2, 132, 199, 0.08);
+      --active-topic-border: #0284c7;
+      --lab-badge-bg: rgba(217, 119, 6, 0.12);
+      --lab-badge-border: rgba(217, 119, 6, 0.35);
+      --lab-badge-text: #b45309;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --shadow-sm: 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.25s ease, color 0.25s ease;
+      line-height: 1.5;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 1.75rem;
+      border-bottom: 1px solid var(--card-border);
+      background-color: var(--card-bg);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 60;
+    }
+
+    .brand-area {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, #ea580c 0%, #38bdf8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.15rem;
+      box-shadow: 0 2px 8px rgba(234, 88, 12, 0.3);
+    }
+
+    .brand-info h1 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.15rem 0.5rem;
+      background: rgba(234, 88, 12, 0.15);
+      color: var(--accent-coral);
+      border: 1px solid rgba(234, 88, 12, 0.3);
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .brand-subtitle {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.1rem;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .header-stat-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.85rem;
+      background-color: var(--card-surface);
+      border: 1px solid var(--card-border);
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .header-stat-pill strong {
+      color: var(--accent-blue);
+    }
+
+    button {
+      background-color: var(--card-surface);
+      color: var(--text-main);
+      border: 1px solid var(--card-border);
+      padding: 0.5rem 0.85rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    button:hover {
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
+      transform: translateY(-1px);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    button.btn-primary {
+      background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+      color: #ffffff;
+      border: 1px solid #ea580c;
+    }
+
+    button.btn-primary:hover {
+      background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+      color: #ffffff;
+      border-color: #f97316;
+      box-shadow: 0 4px 12px var(--accent-coral-glow);
+    }
+
+    button.btn-active {
+      background-color: var(--accent-blue);
+      color: #090d16;
+      border-color: var(--accent-blue);
+    }
+
+    /* Layout Container */
+    .container {
+      max-width: 1600px;
+      margin: 1.25rem auto;
+      padding: 0 1.25rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(360px, 1fr);
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    body.theater-mode .container {
+      grid-template-columns: 1fr;
+      max-width: 100%;
+      padding: 0 1.5rem;
+    }
+
+    @media (max-width: 1100px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Left Column: Player & Workspace */
+    .player-workspace-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      min-width: 0;
+    }
+
+    /* Right Column: Curriculum & Progress Hub */
+    .curriculum-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      min-width: 0;
+      position: sticky;
+      top: 5rem;
+      max-height: calc(100vh - 6rem);
+    }
+
+    body.theater-mode .curriculum-col {
+      position: static;
+      max-height: none;
+    }
+
+    @media (max-width: 1100px) {
+      .curriculum-col {
+        position: static;
+        max-height: none;
+      }
+    }
+
+    /* Cards */
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    /* Protocol Warning */
+    .protocol-warning {
+      display: none;
+      padding: 1rem 1.25rem;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      border-radius: var(--radius-md);
+      color: #fca5a5;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .protocol-warning strong {
+      color: #ef4444;
+    }
+
+    .protocol-warning code {
+      background: rgba(0, 0, 0, 0.35);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      color: #fecaca;
+    }
+
+    /* Video Player */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 ratio */
+      background: #000;
+    }
+
+    .video-wrapper iframe, .video-wrapper #ytPlayer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Player Status Bar */
+    .player-status-bar {
+      padding: 0.85rem 1.25rem;
+      background-color: var(--card-surface);
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .now-playing {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .pulse-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: var(--accent-emerald);
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      animation: pulse 1.8s infinite cubic-bezier(0.66, 0, 0, 1);
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+      }
+    }
+
+    .now-playing-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    .now-playing-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .player-nav-btns {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .player-nav-btns button {
+      padding: 0.35rem 0.65rem;
+      font-size: 0.8rem;
+    }
+
+    /* Video Details Meta */
+    .player-meta {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .meta-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .meta-badges {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent-blue);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+
+    .meta-tag.tag-duration {
+      background: rgba(148, 163, 184, 0.12);
+      color: var(--text-secondary);
+      border-color: rgba(148, 163, 184, 0.25);
+    }
+
+    .meta-tag.tag-instructor {
+      background: rgba(234, 88, 12, 0.12);
+      color: var(--accent-coral);
+      border-color: rgba(234, 88, 12, 0.25);
+    }
+
+    .player-meta h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .player-meta p {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    /* Workspace Tabs (Notes, Cheat-Sheet, Shortcuts) */
+    .workspace-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .workspace-tabs-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--card-border);
+      background-color: var(--card-surface);
+      padding: 0.5rem 1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tab-btn-group {
+      display: flex;
+      gap: 0.35rem;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-secondary);
+      padding: 0.45rem 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+    }
+
+    .tab-btn:hover {
+      color: var(--text-main);
+      background-color: rgba(255, 255, 255, 0.04);
+    }
+
+    .tab-btn.active {
+      color: var(--accent-blue);
+      background-color: var(--card-bg);
+      border-color: var(--card-border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .notes-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .notes-toolbar button {
+      padding: 0.35rem 0.65rem;
+      font-size: 0.78rem;
+    }
+
+    .tab-content {
+      padding: 1.25rem;
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Notes Area */
+    .notes-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .notes-view-mode {
+      display: flex;
+      flex-direction: column;
+    }
+
+    textarea#notesInput {
+      width: 100%;
+      height: 280px;
+      background-color: var(--input-bg);
+      border: 1px solid var(--input-border);
+      border-radius: var(--radius-md);
+      color: var(--text-main);
+      padding: 0.85rem;
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    textarea#notesInput:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 2px var(--accent-blue-glow);
+    }
+
+    .notes-preview-box {
+      width: 100%;
+      min-height: 280px;
+      max-height: 480px;
+      overflow-y: auto;
+      background-color: var(--input-bg);
+      border: 1px solid var(--input-border);
+      border-radius: var(--radius-md);
+      color: var(--text-main);
+      padding: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .notes-preview-box h1, .notes-preview-box h2, .notes-preview-box h3 {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .notes-preview-box h1 { font-size: 1.25rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.3rem; }
+    .notes-preview-box h2 { font-size: 1.1rem; }
+    .notes-preview-box h3 { font-size: 0.95rem; }
+
+    .notes-preview-box p {
+      margin-bottom: 0.75rem;
+    }
+
+    .notes-preview-box ul, .notes-preview-box ol {
+      margin-left: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .notes-preview-box li {
+      margin-bottom: 0.25rem;
+    }
+
+    .notes-preview-box pre {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--card-border);
+      padding: 0.75rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .notes-preview-box code {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--accent-blue);
+    }
+
+    .notes-preview-box blockquote {
+      border-left: 3px solid var(--accent-coral);
+      padding-left: 0.85rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .notes-preview-box a {
+      color: var(--accent-blue);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .notes-preview-box a:hover {
+      color: var(--text-main);
+    }
+
+    .notes-preview-box hr {
+      border: none;
+      border-top: 1px solid var(--card-border);
+      margin: 1.25rem 0;
+    }
+
+    /* Clickable Timestamp Chip in Notes */
+    .ts-chip {
+      background: var(--card-surface);
+      border: 1px solid var(--accent-blue);
+      color: var(--accent-blue);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      vertical-align: middle;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      margin: 0 0.15rem;
+    }
+
+    .ts-chip:hover {
+      background: var(--accent-blue);
+      color: #090d16;
+      box-shadow: 0 2px 6px var(--accent-blue-glow);
+      transform: translateY(-1px);
+    }
+
+    .notes-meta-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Cheat Sheet & Quick Reference */
+    .cheatsheet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .cheat-card {
+      background-color: var(--card-surface);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .cheat-card h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--accent-coral);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .cheat-card p, .cheat-card ul {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .cheat-card ul {
+      margin-left: 1.25rem;
+    }
+
+    .cheat-card code {
+      font-family: var(--font-mono);
+      color: var(--accent-blue);
+      background: rgba(0, 0, 0, 0.25);
+      padding: 0.1rem 0.3rem;
+      border-radius: 3px;
+      font-size: 0.78rem;
+    }
+
+    /* Curriculum / Syllabus Section */
+    .curriculum-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .curriculum-header {
+      padding: 1.15rem 1.25rem 0.85rem;
+      border-bottom: 1px solid var(--card-border);
+      background-color: var(--card-surface);
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .curriculum-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .curriculum-title-row h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Overall Progress Bar */
+    .progress-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .progress-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 8px;
+      background-color: var(--input-bg);
+      border-radius: 9999px;
+      overflow: hidden;
+      border: 1px solid var(--card-border-subtle);
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #ea580c 0%, #f59e0b 50%, #10b981 100%);
+      border-radius: 9999px;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .progress-subtext {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* Filter & Search Bar */
+    .search-filter-area {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .search-input-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .search-input-wrapper svg {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    input#topicSearch {
+      width: 100%;
+      background-color: var(--input-bg);
+      border: 1px solid var(--input-border);
+      border-radius: var(--radius-md);
+      color: var(--text-main);
+      padding: 0.5rem 2rem 0.5rem 2.25rem;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    input#topicSearch:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 2px var(--accent-blue-glow);
+    }
+
+    .search-clear-btn {
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      cursor: pointer;
+      padding: 0.2rem 0.4rem;
+      display: none;
+    }
+
+    .search-clear-btn:hover {
+      color: var(--text-main);
+    }
+
+    .filter-chips-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.35rem 0.75rem;
+      font-size: 0.78rem;
+      border-radius: 9999px;
+      font-weight: 600;
+    }
+
+    .filter-btn.active {
+      background-color: var(--accent-amber);
+      color: #090d16;
+      border-color: var(--accent-amber);
+    }
+
+    .filter-stats-text {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .expand-toggle-btns {
+      display: flex;
+      gap: 0.4rem;
+    }
+
+    .expand-toggle-btns button {
+      background: transparent;
+      border: none;
+      font-size: 0.75rem;
+      color: var(--accent-blue);
+      padding: 0.2rem 0.4rem;
+      cursor: pointer;
+    }
+
+    .expand-toggle-btns button:hover {
+      text-decoration: underline;
+    }
+
+    /* Scrollable Domain List */
+    .domain-list-scroll {
+      overflow-y: auto;
+      flex: 1;
+      padding: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      max-height: calc(100vh - 21rem);
+    }
+
+    body.theater-mode .domain-list-scroll {
+      max-height: 600px;
+    }
+
+    /* Domain Accordion Card */
+    .domain-card {
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      background-color: var(--card-surface);
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    .domain-card:hover {
+      border-color: var(--card-border-subtle);
+    }
+
+    .domain-header {
+      padding: 0.75rem 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+      gap: 0.75rem;
+      background-color: var(--card-surface);
+      transition: background-color 0.15s ease;
+    }
+
+    .domain-header:hover {
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    .domain-title-group {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .domain-code-badge {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.15rem 0.45rem;
+      background: rgba(234, 88, 12, 0.15);
+      color: var(--accent-coral);
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .domain-title-text {
+      font-size: 0.88rem;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .domain-meta-group {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-shrink: 0;
+    }
+
+    .domain-stats-pill {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .domain-mini-progress {
+      width: 44px;
+      height: 5px;
+      background: var(--input-bg);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .domain-mini-progress-fill {
+      height: 100%;
+      background: var(--accent-emerald);
+      width: 0%;
+      transition: width 0.25s ease;
+    }
+
+    .domain-chevron {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+
+    .domain-card.open .domain-chevron {
+      transform: rotate(180deg);
+    }
+
+    /* Topic Items inside Domain */
+    .domain-topics {
+      display: none;
+      flex-direction: column;
+      background-color: var(--card-bg);
+      border-top: 1px solid var(--card-border);
+    }
+
+    .domain-card.open .domain-topics {
+      display: flex;
+    }
+
+    .topic-row {
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 0.95rem;
+      border-bottom: 1px solid var(--card-border);
+      gap: 0.75rem;
+      transition: background-color 0.15s ease;
+      cursor: pointer;
+    }
+
+    /* Domain-level Checkbox */
+    .domain-checkbox {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 17px;
+      height: 17px;
+      border: 1.5px solid var(--input-border);
+      border-radius: 4px;
+      background-color: var(--input-bg);
+      cursor: pointer;
+      display: inline-grid;
+      place-content: center;
+      transition: all 0.15s ease;
+      flex-shrink: 0;
+      margin-right: 0.15rem;
+    }
+
+    .domain-checkbox:checked {
+      background-color: var(--accent-emerald);
+      border-color: var(--accent-emerald);
+    }
+
+    .domain-checkbox:checked::before {
+      content: "✓";
+      font-size: 11px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .domain-checkbox:indeterminate {
+      background-color: rgba(16, 185, 129, 0.45);
+      border-color: var(--accent-emerald);
+    }
+
+    .domain-checkbox:indeterminate::before {
+      content: "—";
+      font-size: 10px;
+      font-weight: 900;
+      color: #ffffff;
+    }
+
+    .domain-checkbox:hover {
+      border-color: var(--accent-emerald);
+    }
+
+    .topic-row:last-child {
+      border-bottom: none;
+    }
+
+    .topic-row:hover {
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    .topic-row.active {
+      background-color: var(--active-topic-bg);
+      border-left: 3px solid var(--active-topic-border);
+      padding-left: calc(0.95rem - 3px);
+    }
+
+    .topic-row.completed .topic-name {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+
+    /* Checkbox */
+    .topic-check-container {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .topic-checkbox {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 17px;
+      height: 17px;
+      border: 1.5px solid var(--input-border);
+      border-radius: 4px;
+      background-color: var(--input-bg);
+      cursor: pointer;
+      display: inline-grid;
+      place-content: center;
+      transition: all 0.15s ease;
+    }
+
+    .topic-checkbox:checked {
+      background-color: var(--accent-emerald);
+      border-color: var(--accent-emerald);
+    }
+
+    .topic-checkbox:checked::before {
+      content: "✓";
+      font-size: 11px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .topic-checkbox:hover {
+      border-color: var(--accent-emerald);
+    }
+
+    /* Topic Info */
+    .topic-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      flex: 1;
+      min-width: 0;
+      cursor: pointer;
+    }
+
+    .topic-info-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .topic-name {
+      font-size: 0.84rem;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--text-main);
+      transition: color 0.15s ease;
+    }
+
+    .topic-content:hover .topic-name {
+      color: var(--accent-blue);
+    }
+
+    .lab-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      background-color: var(--lab-badge-bg);
+      color: var(--lab-badge-text);
+      border: 1px solid var(--lab-badge-border);
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .seek-time-btn {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+
+    .seek-time-btn:hover {
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
+      background-color: rgba(56, 189, 248, 0.08);
+    }
+
+    .now-playing-pill {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: var(--accent-blue);
+      color: #090d16;
+      padding: 0.1rem 0.4rem;
+      border-radius: 9999px;
+      display: none;
+    }
+
+    .topic-row.active .now-playing-pill {
+      display: inline-block;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--card-border);
+      background-color: var(--card-bg);
+    }
+
+    footer a {
+      color: var(--accent-blue);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Toast Notification */
+    .toast-container {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      pointer-events: none;
+    }
+
+    .toast {
+      background-color: var(--card-surface);
+      color: var(--text-main);
+      border: 1px solid var(--accent-blue);
+      box-shadow: var(--shadow);
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.25s ease;
+      pointer-events: auto;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="brand-area">
+      <div class="brand-icon">C</div>
+      <div class="brand-info">
+        <h1>
+          Claude Certified Developer
+          <span class="brand-badge">CCDV-F</span>
+        </h1>
+        <div class="brand-subtitle">Interactive Certification Portal &bull; 117 Topics &bull; 28 Follow-Along Labs</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="header-stat-pill" id="headerProgressPill" title="Overall Exam Progress">
+        <span>Progress:</span>
+        <strong id="headerProgressText">0 / 117 (0%)</strong>
+      </div>
+      <button id="theaterBtn" title="Toggle Theater Mode (T)">
+        <span id="theaterIcon">🗖</span> <span>Theater</span>
+      </button>
+      <button id="themeBtn" title="Toggle Theme (D)">
+        <span id="themeIcon">☀️</span> <span>Theme</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+
+    <!-- Left Column: Player & Study Workspace -->
+    <section class="player-workspace-col">
+
+      <!-- Protocol Warning for file:// -->
+      <div id="protocolWarning" class="protocol-warning">
+        <strong>⚠️ YouTube Embed Error 153 Detected:</strong> You are viewing this page directly via the <code>file://</code> protocol. YouTube blocks embedded video players when loaded without an HTTP/HTTPS origin.
+        <div style="margin-top: 0.5rem;">
+          To fix this, serve this page via a local HTTP server: run <code>python3 -m http.server 8000</code> in your terminal and open <a href="http://localhost:8000" target="_blank" style="color: var(--accent-blue); text-decoration: underline;">http://localhost:8000</a>.
+        </div>
+      </div>
+
+      <!-- Player Card -->
+      <div class="card">
+        <div class="video-wrapper">
+          <iframe
+            id="ytPlayer"
+            src="https://www.youtube.com/embed/C_1QKZAcJjk?enablejsapi=1&rel=0&modestbranding=1"
+            title="Claude Certified Developer Foundations (CCDV-F) Course"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- Player Live Status Bar -->
+        <div class="player-status-bar">
+          <div class="now-playing">
+            <div class="pulse-dot"></div>
+            <div style="min-width: 0;">
+              <div class="now-playing-label">Current Topic:</div>
+              <div class="now-playing-title" id="nowPlayingTitle">000 Introduction (00:00:00)</div>
+            </div>
+          </div>
+          <div class="player-nav-btns">
+            <button id="prevTopicBtn" title="Jump to Previous Topic">⏮ Prev</button>
+            <button id="nextTopicBtn" title="Jump to Next Topic">Next ⏭</button>
+            <button id="locateTopicBtn" title="Scroll to Current Topic in Syllabus">🎯 Locate</button>
+          </div>
+        </div>
+
+        <!-- Video Metadata Info -->
+        <div class="player-meta">
+          <div class="meta-top-row">
+            <div class="meta-badges">
+              <span class="meta-tag tag-instructor">Instructor: Andrew Brown</span>
+              <span class="meta-tag tag-duration">⏱️ 7h 47m Total</span>
+              <span class="meta-tag">Anthropic Official Blueprint</span>
+            </div>
+          </div>
+          <h2>Claude Certified Developer - Foundations (CCDV-F) Certification Course</h2>
+          <p>
+            Master Anthropic's official hands-on certification curriculum. Build production-grade agents, deploy Model Context Protocol (MCP) servers, implement prompt caching, manage subagents, and practice all 28 follow-along labs.
+          </p>
+        </div>
+      </div>
+
+      <!-- Study Workspace Card (Notes, Cheatsheet, Shortcuts) -->
+      <div class="card workspace-card">
+        <div class="workspace-tabs-header">
+          <div class="tab-btn-group">
+            <button class="tab-btn active" data-tab="notesTab">📝 Interactive Notes</button>
+            <button class="tab-btn" data-tab="cheatsheetTab">⚡ Exam Cheat Sheet</button>
+            <button class="tab-btn" data-tab="shortcutsTab">⌨️ Shortcuts</button>
+          </div>
+          <div class="notes-toolbar" id="notesToolbar">
+            <button id="insertTimestampBtn" class="btn-primary" title="Insert Current Video Timestamp at Cursor (Alt+T)">
+              ⏱️ Insert Timestamp
+            </button>
+            <button id="togglePreviewBtn" title="Toggle Markdown Preview">
+              👁️ <span id="previewBtnText">Preview</span>
+            </button>
+            <button id="exportNotesBtn" title="Export Notes to Markdown (.md)">
+              💾 Export .md
+            </button>
+            <button id="copyNotesBtn" title="Copy Markdown to Clipboard">
+              📋 Copy
+            </button>
+            <button id="clearNotesBtn" title="Clear Notes">
+              🗑️ Clear
+            </button>
+          </div>
+        </div>
+
+        <!-- Tab 1: Interactive Markdown Notes -->
+        <div class="tab-content active" id="notesTab">
+          <div class="notes-container">
+            <div class="notes-view-mode" id="notesEditMode">
+              <textarea
+                id="notesInput"
+                placeholder="Take markdown study notes while watching. Use 'Insert Timestamp' or type [hh:mm:ss] to create clickable seek links! Everything is autosaved."></textarea>
+            </div>
+            <div class="notes-preview-box" id="notesPreviewMode" style="display: none;">
+              <!-- Rendered Markdown goes here -->
+            </div>
+            <div class="notes-meta-bar">
+              <span id="notesWordCount">0 words &bull; 0 characters</span>
+              <span>💡 Click any timestamp chip (e.g. <span class="ts-chip">▶ 01:11:47</span>) in preview to jump immediately to that point in the lecture!</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Exam Quick Reference & Cheatsheet -->
+        <div class="tab-content" id="cheatsheetTab">
+          <div class="cheatsheet-grid">
+            <div class="cheat-card">
+              <h4>💾 Prompt Caching</h4>
+              <ul>
+                <li><strong>TTL:</strong> 5-minute sliding window (refreshed on cache hits).</li>
+                <li><strong>Min Tokens:</strong> Minimum token threshold required for prompt prefix caching.</li>
+                <li><strong>Cost Savings:</strong> Up to 90% discount on cache read tokens vs base inputs.</li>
+                <li><strong>Breakpoint:</strong> Add <code>"cache_control": {"type": "ephemeral"}</code> to tool definitions or system prompts.</li>
+              </ul>
+            </div>
+            <div class="cheat-card">
+              <h4>🤖 Agent SDK &amp; Harness</h4>
+              <ul>
+                <li><strong>Code Harness:</strong> Outer wrapper executing the agentic loop and state machine.</li>
+                <li><strong><code>PreToolUse</code> Hook:</strong> Intercepts tool calls before execution (validation, policy check, authorization).</li>
+                <li><strong><code>PostToolUse</code> Hook:</strong> Sanitizes output, strips sensitive data, and handles errors.</li>
+                <li><strong>Agentic Loop:</strong> Model predicts tool call &rarr; Harness executes &rarr; Result appended &rarr; Repeat until stop.</li>
+              </ul>
+            </div>
+            <div class="cheat-card">
+              <h4>🔌 Model Context Protocol (MCP)</h4>
+              <ul>
+                <li><strong>Resources:</strong> Static or contextual data read by the LLM (like files or database schemas).</li>
+                <li><strong>Tools:</strong> Executable functions that cause side effects or query live APIs.</li>
+                <li><strong>Prompts:</strong> Pre-packaged prompt templates exposed by the server.</li>
+                <li><strong>Transport:</strong> Stdio (standard in/out) or Streamable HTTP.</li>
+              </ul>
+            </div>
+            <div class="cheat-card">
+              <h4>⌨️ Claude Code CLI Commands</h4>
+              <ul>
+                <li><code>/compact</code> — Summarize conversation context to reclaim token window.</li>
+                <li><code>/clear</code> — Reset session context and scratchpad.</li>
+                <li><code>/resume</code> &amp; <code>/fork</code> — Re-open or branch an earlier working session.</li>
+                <li><code>/context</code> — Inspect current token breakdown and loaded memory.</li>
+                <li><code>/rewind</code> — Undo previous agent state changes or file edits.</li>
+                <li><code>/fast</code> &amp; <code>/effort</code> — Adjust reasoning depth and latency.</li>
+              </ul>
+            </div>
+            <div class="cheat-card">
+              <h4>🛡️ Guardrails &amp; Security</h4>
+              <ul>
+                <li><strong>Sandboxing:</strong> Run untrusted generated code in isolated containers or jails.</li>
+                <li><strong>Permission Modes:</strong> Plan mode (read-only draft) vs Accept mode (auto-execute).</li>
+                <li><strong>Data Leakage:</strong> Redact PII in pre-hooks before tokens reach the API.</li>
+                <li><strong>Injection Defense:</strong> Enforce strict delimiter boundaries and XML schema wrapping.</li>
+              </ul>
+            </div>
+            <div class="cheat-card">
+              <h4>🎯 Model Selection Tradeoffs</h4>
+              <ul>
+                <li><strong>Agentic Loop Models:</strong> Selecting models optimized for reliable tool execution and agentic workflows.</li>
+                <li><strong>Adaptive Thinking:</strong> Dynamic token allocation matching thinking depth to task complexity.</li>
+                <li><strong>Extended Thinking:</strong> Configurable reasoning budget for deep multi-step architecture and debugging.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Shortcuts & Controls -->
+        <div class="tab-content" id="shortcutsTab">
+          <div class="cheatsheet-grid">
+            <div class="cheat-card">
+              <h4>⌨️ Portal Keyboard Shortcuts</h4>
+              <ul>
+                <li><kbd>T</kbd> — Toggle Theater Mode</li>
+                <li><kbd>D</kbd> — Toggle Light / Dark Mode</li>
+                <li><kbd>Alt + T</kbd> — Insert current video timestamp into notes</li>
+                <li><kbd>Space</kbd> / <kbd>K</kbd> — Play / Pause video</li>
+                <li><kbd>J</kbd> / <kbd>L</kbd> — Seek backward / forward 10 seconds</li>
+                <li><kbd>F</kbd> — Fullscreen video player</li>
+              </ul>
+            </div>
+            <div class="cheat-card">
+              <h4>💡 Study Tips for CCDV-F</h4>
+              <ul>
+                <li>Complete all 28 follow-along labs marked with the <span class="lab-badge">LAB</span> badge.</li>
+                <li>Take timestamped notes to quickly revisit tricky concepts before test day.</li>
+                <li>Use the search filter to review specific domains (e.g. search "MCP" or "Hooks").</li>
+                <li>Track your domain progress until you hit 100% completion!</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Right Column: Curriculum & Progress Hub -->
+    <aside class="curriculum-col">
+      <div class="curriculum-container">
+
+        <!-- Curriculum Header & Overall Progress -->
+        <div class="curriculum-header">
+          <div class="curriculum-title-row">
+            <h2>
+              <span>📚</span>
+              <span>Course Syllabus</span>
+            </h2>
+            <div class="expand-toggle-btns">
+              <button id="expandAllBtn">Expand All</button>
+              <span style="color: var(--text-muted); font-size: 0.75rem;">&bull;</span>
+              <button id="collapseAllBtn">Collapse All</button>
+              <span style="color: var(--text-muted); font-size: 0.75rem;">&bull;</span>
+              <button id="resetProgressBtn" style="color: var(--text-muted);">Reset</button>
+            </div>
+          </div>
+
+          <!-- Progress Bar Box -->
+          <div class="progress-box">
+            <div class="progress-labels">
+              <span>Exam Readiness Progress:</span>
+              <span id="overallProgressPct">0%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" id="overallProgressFill"></div>
+            </div>
+            <div class="progress-subtext">
+              <span id="overallProgressTopics">0 / 117 Topics Completed</span>
+              <span id="overallProgressLabs">0 / 28 Labs Done</span>
+            </div>
+          </div>
+
+          <!-- Real-Time Search & Filter Area -->
+          <div class="search-filter-area">
+            <div class="search-input-wrapper">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              <input type="text" id="topicSearch" placeholder="Search 117 topics, domains, concepts..." autocomplete="off">
+              <button id="searchClearBtn" class="search-clear-btn" title="Clear search">&times;</button>
+            </div>
+
+            <div class="filter-chips-row">
+              <button id="filterLabsBtn" class="filter-btn">
+                🧪 Follow-Along Labs Only (28)
+              </button>
+              <div class="filter-stats-text" id="filterMatchCount">
+                Showing 117 of 117 topics
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scrollable Domains & Topics Accordion -->
+        <div class="domain-list-scroll" id="domainListContainer">
+          <!-- Domains rendered via JS -->
+        </div>
+
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      Anthropic Claude Certified Developer - Foundations (CCDV-F) Interactive Study Portal &bull; Course created by <a href="https://www.exampro.co/ccdv-f" target="_blank" rel="noopener noreferrer">Andrew Brown (ExamPro)</a> on freeCodeCamp.
+    </p>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Embedded Curriculum Data & Portal Logic -->
+  <script>
+    // Embedded Complete Curriculum Data
+    const CURRICULUM = {"domains": [{"id": "dom-000", "code": "000", "title": "Orientation & Introduction", "topics": [{"id": "t-1", "index": 1, "timestamp": "00:00:00", "timeSec": 0, "title": "Introduction", "isLab": false, "domainCode": "000"}, {"id": "t-2", "index": 2, "timestamp": "00:06:49", "timeSec": 409, "title": "Exam Guide Breakdown", "isLab": false, "domainCode": "000"}]}, {"id": "dom-010", "code": "010", "title": "Agent Architecture", "topics": [{"id": "t-3", "index": 3, "timestamp": "00:11:29", "timeSec": 689, "title": "Agent Architecture", "isLab": false, "domainCode": "010"}, {"id": "t-4", "index": 4, "timestamp": "00:15:15", "timeSec": 915, "title": "Workflow Architecture", "isLab": false, "domainCode": "010"}, {"id": "t-5", "index": 5, "timestamp": "00:17:26", "timeSec": 1046, "title": "Multi Agent Architecture", "isLab": false, "domainCode": "010"}, {"id": "t-6", "index": 6, "timestamp": "01:06:54", "timeSec": 4014, "title": "Subagents Improving Task Execution", "isLab": false, "domainCode": "010"}]}, {"id": "dom-020", "code": "020", "title": "Agent Construction with Claude", "topics": [{"id": "t-7", "index": 7, "timestamp": "01:10:35", "timeSec": 4235, "title": "Agent SDK", "isLab": false, "domainCode": "020"}, {"id": "t-8", "index": 8, "timestamp": "01:11:47", "timeSec": 4307, "title": "Agent SDK Follow Along", "isLab": true, "domainCode": "020"}, {"id": "t-9", "index": 9, "timestamp": "01:17:04", "timeSec": 4624, "title": "What is a Code Harness", "isLab": false, "domainCode": "020"}, {"id": "t-10", "index": 10, "timestamp": "01:18:19", "timeSec": 4699, "title": "PreToolUse and PostToolUse Hooks", "isLab": false, "domainCode": "020"}, {"id": "t-11", "index": 11, "timestamp": "01:19:17", "timeSec": 4757, "title": "PreToolUse and PostToolUse Hooks Follow Along", "isLab": true, "domainCode": "020"}, {"id": "t-12", "index": 12, "timestamp": "01:23:28", "timeSec": 5008, "title": "Claude Managed Agents Follow Along", "isLab": true, "domainCode": "020"}]}, {"id": "dom-030", "code": "030", "title": "Agent Patterns and Frameworks", "topics": [{"id": "t-13", "index": 13, "timestamp": "01:43:01", "timeSec": 6181, "title": "The Agentic Loop", "isLab": false, "domainCode": "030"}, {"id": "t-14", "index": 14, "timestamp": "01:44:49", "timeSec": 6289, "title": "The Agentic Loop Tool Calls", "isLab": false, "domainCode": "030"}]}, {"id": "dom-040", "code": "040", "title": "Claude API Mechanics", "topics": [{"id": "t-15", "index": 15, "timestamp": "01:48:16", "timeSec": 6496, "title": "Claude Messages and Content", "isLab": false, "domainCode": "040"}, {"id": "t-16", "index": 16, "timestamp": "01:50:24", "timeSec": 6624, "title": "Claude Messages System Prompt", "isLab": false, "domainCode": "040"}, {"id": "t-17", "index": 17, "timestamp": "01:52:40", "timeSec": 6760, "title": "Claude Messages Response Format", "isLab": false, "domainCode": "040"}, {"id": "t-18", "index": 18, "timestamp": "01:53:56", "timeSec": 6836, "title": "Max Tokens", "isLab": false, "domainCode": "040"}, {"id": "t-19", "index": 19, "timestamp": "01:54:58", "timeSec": 6898, "title": "Stop Reason", "isLab": false, "domainCode": "040"}, {"id": "t-20", "index": 20, "timestamp": "01:57:48", "timeSec": 7068, "title": "Streaming Messages", "isLab": false, "domainCode": "040"}, {"id": "t-21", "index": 21, "timestamp": "01:59:39", "timeSec": 7179, "title": "Claude Code Image Reasoning", "isLab": false, "domainCode": "040"}, {"id": "t-22", "index": 22, "timestamp": "02:01:14", "timeSec": 7274, "title": "Claude Code Image Reasoning Follow Along", "isLab": true, "domainCode": "040"}, {"id": "t-23", "index": 23, "timestamp": "02:05:43", "timeSec": 7543, "title": "Prompt Caching", "isLab": false, "domainCode": "040"}, {"id": "t-24", "index": 24, "timestamp": "02:08:53", "timeSec": 7733, "title": "Claude Code API Key via Third Party Providers", "isLab": false, "domainCode": "040"}, {"id": "t-25", "index": 25, "timestamp": "02:09:40", "timeSec": 7780, "title": "Batch Processing Follow Along", "isLab": true, "domainCode": "040"}, {"id": "t-26", "index": 26, "timestamp": "02:15:14", "timeSec": 8114, "title": "Real Time vs Batch API", "isLab": false, "domainCode": "040"}]}, {"id": "dom-050", "code": "050", "title": "Software Engineering Foundations", "topics": [{"id": "t-27", "index": 27, "timestamp": "02:16:28", "timeSec": 8188, "title": "Semi structure JSON", "isLab": false, "domainCode": "050"}, {"id": "t-28", "index": 28, "timestamp": "02:17:23", "timeSec": 8243, "title": "Version Control Systems", "isLab": false, "domainCode": "050"}, {"id": "t-29", "index": 29, "timestamp": "02:19:26", "timeSec": 8366, "title": "Version Control Services", "isLab": false, "domainCode": "050"}, {"id": "t-30", "index": 30, "timestamp": "02:22:44", "timeSec": 8564, "title": "Code Review", "isLab": false, "domainCode": "050"}, {"id": "t-31", "index": 31, "timestamp": "02:23:45", "timeSec": 8625, "title": "Simplify Command", "isLab": false, "domainCode": "050"}]}, {"id": "dom-060", "code": "060", "title": "Claude Application Design", "topics": [{"id": "t-32", "index": 32, "timestamp": "02:24:36", "timeSec": 8676, "title": "Claude Code Surfaces", "isLab": false, "domainCode": "060"}, {"id": "t-33", "index": 33, "timestamp": "02:25:56", "timeSec": 8756, "title": "Content Boundaries", "isLab": false, "domainCode": "060"}, {"id": "t-34", "index": 34, "timestamp": "02:28:06", "timeSec": 8886, "title": "Session Hygiene", "isLab": false, "domainCode": "060"}, {"id": "t-35", "index": 35, "timestamp": "02:30:17", "timeSec": 9017, "title": "Plugins", "isLab": false, "domainCode": "060"}]}, {"id": "dom-070", "code": "070", "title": "Configuration Management", "topics": [{"id": "t-36", "index": 36, "timestamp": "02:34:19", "timeSec": 9259, "title": "CLAUDE md Files", "isLab": false, "domainCode": "070"}, {"id": "t-37", "index": 37, "timestamp": "02:36:58", "timeSec": 9418, "title": "Claude Code Settings Scope", "isLab": false, "domainCode": "070"}, {"id": "t-38", "index": 38, "timestamp": "02:38:50", "timeSec": 9530, "title": "Claude Code Settings", "isLab": false, "domainCode": "070"}, {"id": "t-39", "index": 39, "timestamp": "02:50:49", "timeSec": 10249, "title": "Model version pinning", "isLab": false, "domainCode": "070"}, {"id": "t-40", "index": 40, "timestamp": "03:05:54", "timeSec": 11154, "title": "Prompt Versions", "isLab": false, "domainCode": "070"}]}, {"id": "dom-080", "code": "080", "title": "Claude Code Operations", "topics": [{"id": "t-41", "index": 41, "timestamp": "03:05:58", "timeSec": 11158, "title": "Claude Rules", "isLab": false, "domainCode": "080"}, {"id": "t-42", "index": 42, "timestamp": "03:06:51", "timeSec": 11211, "title": "Claude Rules Follow Along", "isLab": true, "domainCode": "080"}, {"id": "t-43", "index": 43, "timestamp": "03:19:31", "timeSec": 11971, "title": "Agent Skills", "isLab": false, "domainCode": "080"}, {"id": "t-44", "index": 44, "timestamp": "03:21:49", "timeSec": 12109, "title": "Skills Follow Along", "isLab": true, "domainCode": "080"}, {"id": "t-45", "index": 45, "timestamp": "03:32:41", "timeSec": 12761, "title": "Resume Command", "isLab": false, "domainCode": "080"}, {"id": "t-46", "index": 46, "timestamp": "03:33:30", "timeSec": 12810, "title": "Resume Command Follow Along", "isLab": true, "domainCode": "080"}, {"id": "t-47", "index": 47, "timestamp": "03:37:42", "timeSec": 13062, "title": "Fork Session", "isLab": false, "domainCode": "080"}, {"id": "t-48", "index": 48, "timestamp": "03:38:20", "timeSec": 13100, "title": "Fork Session Follow Along", "isLab": true, "domainCode": "080"}, {"id": "t-49", "index": 49, "timestamp": "03:40:40", "timeSec": 13240, "title": "Context Command", "isLab": false, "domainCode": "080"}, {"id": "t-50", "index": 50, "timestamp": "03:42:09", "timeSec": 13329, "title": "Rename and Rewind", "isLab": false, "domainCode": "080"}, {"id": "t-51", "index": 51, "timestamp": "03:43:14", "timeSec": 13394, "title": "Rename and Rewind Follow Along", "isLab": true, "domainCode": "080"}, {"id": "t-52", "index": 52, "timestamp": "03:45:10", "timeSec": 13510, "title": "Status Command", "isLab": false, "domainCode": "080"}, {"id": "t-53", "index": 53, "timestamp": "03:48:16", "timeSec": 13696, "title": "Security Review Command", "isLab": false, "domainCode": "080"}, {"id": "t-54", "index": 54, "timestamp": "03:49:22", "timeSec": 13762, "title": "Sub agents", "isLab": false, "domainCode": "080"}, {"id": "t-55", "index": 55, "timestamp": "03:51:25", "timeSec": 13885, "title": "Sub agents Follow Along", "isLab": true, "domainCode": "080"}, {"id": "t-56", "index": 56, "timestamp": "03:59:50", "timeSec": 14390, "title": "Claude Auto Memory", "isLab": false, "domainCode": "080"}, {"id": "t-57", "index": 57, "timestamp": "04:02:13", "timeSec": 14533, "title": "Claude Auto Memory Follow Along", "isLab": true, "domainCode": "080"}, {"id": "t-58", "index": 58, "timestamp": "04:06:07", "timeSec": 14767, "title": "Claude Code Sessions", "isLab": false, "domainCode": "080"}, {"id": "t-59", "index": 59, "timestamp": "04:07:08", "timeSec": 14828, "title": "Headless Tasks", "isLab": false, "domainCode": "080"}, {"id": "t-60", "index": 60, "timestamp": "04:09:06", "timeSec": 14946, "title": "Headless Tasks Follow Along", "isLab": true, "domainCode": "080"}, {"id": "t-61", "index": 61, "timestamp": "04:16:39", "timeSec": 15399, "title": "Enable Auto Mode", "isLab": false, "domainCode": "080"}, {"id": "t-62", "index": 62, "timestamp": "04:17:51", "timeSec": 15471, "title": "Enable Auto Mode Follow Along", "isLab": true, "domainCode": "080"}, {"id": "t-63", "index": 63, "timestamp": "04:23:28", "timeSec": 15808, "title": "Top Level Claude md File", "isLab": false, "domainCode": "080"}, {"id": "t-64", "index": 64, "timestamp": "04:24:17", "timeSec": 15857, "title": "Claude files Follow Along", "isLab": true, "domainCode": "080"}]}, {"id": "dom-090", "code": "090", "title": "Debugging and Error Handling", "topics": [{"id": "t-65", "index": 65, "timestamp": "04:38:23", "timeSec": 16703, "title": "Debug Mode", "isLab": false, "domainCode": "090"}, {"id": "t-66", "index": 66, "timestamp": "04:39:25", "timeSec": 16765, "title": "Debug Mode Follow Along", "isLab": true, "domainCode": "090"}]}, {"id": "dom-100", "code": "100", "title": "LLM Fundamentals", "topics": [{"id": "t-67", "index": 67, "timestamp": "04:42:14", "timeSec": 16934, "title": "Tokens and Capacity", "isLab": false, "domainCode": "100"}, {"id": "t-68", "index": 68, "timestamp": "04:44:37", "timeSec": 17077, "title": "Context Window Size", "isLab": false, "domainCode": "100"}, {"id": "t-69", "index": 69, "timestamp": "04:46:55", "timeSec": 17215, "title": "Sampling", "isLab": false, "domainCode": "100"}, {"id": "t-70", "index": 70, "timestamp": "04:49:29", "timeSec": 17369, "title": "Non determinism", "isLab": false, "domainCode": "100"}, {"id": "t-71", "index": 71, "timestamp": "04:51:00", "timeSec": 17460, "title": "What is a Large Language Model", "isLab": false, "domainCode": "100"}, {"id": "t-72", "index": 72, "timestamp": "04:52:44", "timeSec": 17564, "title": "Fast Command", "isLab": false, "domainCode": "100"}, {"id": "t-73", "index": 73, "timestamp": "04:53:12", "timeSec": 17592, "title": "Fast Mode Follow Along", "isLab": true, "domainCode": "100"}, {"id": "t-74", "index": 74, "timestamp": "04:56:48", "timeSec": 17808, "title": "Effort Command", "isLab": false, "domainCode": "100"}, {"id": "t-75", "index": 75, "timestamp": "04:58:42", "timeSec": 17922, "title": "Effort Follow Along", "isLab": true, "domainCode": "100"}, {"id": "t-76", "index": 76, "timestamp": "05:04:45", "timeSec": 18285, "title": "Zero Single and Multi Shot", "isLab": false, "domainCode": "100"}]}, {"id": "dom-110", "code": "110", "title": "Model Selection and Tradeoffs", "topics": [{"id": "t-77", "index": 77, "timestamp": "05:07:17", "timeSec": 18437, "title": "The Agentic Loop Models", "isLab": false, "domainCode": "110"}, {"id": "t-78", "index": 78, "timestamp": "05:09:26", "timeSec": 18566, "title": "Adaptive Thinking Support", "isLab": false, "domainCode": "110"}, {"id": "t-79", "index": 79, "timestamp": "05:11:56", "timeSec": 18716, "title": "Extended Thinking vs Adaptive Thinking", "isLab": false, "domainCode": "110"}]}, {"id": "dom-120", "code": "120", "title": "Cost and Token Management", "topics": [{"id": "t-80", "index": 80, "timestamp": "05:13:56", "timeSec": 18836, "title": "Token Count API", "isLab": false, "domainCode": "120"}, {"id": "t-81", "index": 81, "timestamp": "05:14:53", "timeSec": 18893, "title": "Cost Modeling", "isLab": false, "domainCode": "120"}, {"id": "t-82", "index": 82, "timestamp": "05:16:42", "timeSec": 19002, "title": "Prompt Caching Costs", "isLab": false, "domainCode": "120"}]}, {"id": "dom-130", "code": "130", "title": "Context Engineering", "topics": [{"id": "t-83", "index": 83, "timestamp": "05:17:46", "timeSec": 19066, "title": "Tool Output Pruning", "isLab": false, "domainCode": "130"}, {"id": "t-84", "index": 84, "timestamp": "05:20:31", "timeSec": 19231, "title": "Compact and Clear Command", "isLab": false, "domainCode": "130"}, {"id": "t-85", "index": 85, "timestamp": "05:22:05", "timeSec": 19325, "title": "Compact and Clear Follow Along", "isLab": true, "domainCode": "130"}]}, {"id": "dom-140", "code": "140", "title": "Prompt Engineering", "topics": [{"id": "t-86", "index": 86, "timestamp": "05:27:19", "timeSec": 19639, "title": "Prompting with Explicit Criteria", "isLab": false, "domainCode": "140"}, {"id": "t-87", "index": 87, "timestamp": "05:28:21", "timeSec": 19701, "title": "Few Shot Prompting", "isLab": false, "domainCode": "140"}, {"id": "t-88", "index": 88, "timestamp": "05:29:23", "timeSec": 19763, "title": "Structured JSON Generation", "isLab": false, "domainCode": "140"}, {"id": "t-89", "index": 89, "timestamp": "05:33:04", "timeSec": 19984, "title": "Refinement Loop", "isLab": false, "domainCode": "140"}, {"id": "t-90", "index": 90, "timestamp": "05:33:58", "timeSec": 20038, "title": "Refinement Loop Follow Along", "isLab": true, "domainCode": "140"}]}, {"id": "dom-160", "code": "160", "title": "AI Application Security", "topics": [{"id": "t-91", "index": 91, "timestamp": "05:45:53", "timeSec": 20753, "title": "Prompt Injection Awareness and Mitigation", "isLab": false, "domainCode": "160"}, {"id": "t-92", "index": 92, "timestamp": "05:52:21", "timeSec": 21141, "title": "Data Leakage Prevention and PII Handling", "isLab": false, "domainCode": "160"}]}, {"id": "dom-170", "code": "170", "title": "Guardrails and Safe Deployment", "topics": [{"id": "t-93", "index": 93, "timestamp": "05:54:00", "timeSec": 21240, "title": "Permission Rules", "isLab": false, "domainCode": "170"}, {"id": "t-94", "index": 94, "timestamp": "05:55:31", "timeSec": 21331, "title": "Permission Rules Follow Along", "isLab": true, "domainCode": "170"}, {"id": "t-95", "index": 95, "timestamp": "06:10:01", "timeSec": 22201, "title": "Sandboxing", "isLab": false, "domainCode": "170"}, {"id": "t-96", "index": 96, "timestamp": "06:12:03", "timeSec": 22323, "title": "Sandbox Follow Along", "isLab": true, "domainCode": "170"}, {"id": "t-97", "index": 97, "timestamp": "06:19:54", "timeSec": 22794, "title": "Hooks", "isLab": false, "domainCode": "170"}, {"id": "t-98", "index": 98, "timestamp": "06:21:33", "timeSec": 22893, "title": "Security Hook Follow Along", "isLab": true, "domainCode": "170"}]}, {"id": "dom-180", "code": "180", "title": "Identity Secrets and Key Management", "topics": [{"id": "t-99", "index": 99, "timestamp": "06:58:51", "timeSec": 25131, "title": "Claude Code via API Key", "isLab": false, "domainCode": "180"}, {"id": "t-100", "index": 100, "timestamp": "06:59:57", "timeSec": 25197, "title": "Permission Modes", "isLab": false, "domainCode": "180"}, {"id": "t-101", "index": 101, "timestamp": "07:01:33", "timeSec": 25293, "title": "Permission Modes Follow Along", "isLab": true, "domainCode": "180"}, {"id": "t-102", "index": 102, "timestamp": "07:05:35", "timeSec": 25535, "title": "Authentication vs Authorization", "isLab": false, "domainCode": "180"}]}, {"id": "dom-190", "code": "190", "title": "Tool Implementation", "topics": [{"id": "t-103", "index": 103, "timestamp": "07:08:02", "timeSec": 25682, "title": "Tool Choice", "isLab": false, "domainCode": "190"}, {"id": "t-104", "index": 104, "timestamp": "07:10:08", "timeSec": 25808, "title": "Tool Descriptions", "isLab": false, "domainCode": "190"}, {"id": "t-105", "index": 105, "timestamp": "07:11:05", "timeSec": 25865, "title": "Error handling", "isLab": false, "domainCode": "190"}, {"id": "t-106", "index": 106, "timestamp": "07:11:49", "timeSec": 25909, "title": "Agent Tool", "isLab": false, "domainCode": "190"}, {"id": "t-107", "index": 107, "timestamp": "07:14:22", "timeSec": 26062, "title": "Agent Tool Follow Along", "isLab": true, "domainCode": "190"}]}, {"id": "dom-200", "code": "200", "title": "MCP Server Deployment", "topics": [{"id": "t-108", "index": 108, "timestamp": "07:25:44", "timeSec": 26744, "title": "MCP with Claude Code", "isLab": false, "domainCode": "200"}, {"id": "t-109", "index": 109, "timestamp": "07:27:52", "timeSec": 26872, "title": "MCP Resources vs Tools", "isLab": false, "domainCode": "200"}, {"id": "t-110", "index": 110, "timestamp": "07:29:12", "timeSec": 26952, "title": "MCP Resources vs Tools Follow Along", "isLab": true, "domainCode": "200"}, {"id": "t-111", "index": 111, "timestamp": "07:37:23", "timeSec": 27443, "title": "MCP Prompts", "isLab": false, "domainCode": "200"}, {"id": "t-112", "index": 112, "timestamp": "07:38:08", "timeSec": 27488, "title": "Setup Claude Platform on AWS", "isLab": false, "domainCode": "200"}]}, {"id": "dom-210", "code": "210", "title": "Agent Customization", "topics": [{"id": "t-113", "index": 113, "timestamp": "07:39:34", "timeSec": 27574, "title": "Built In Tools", "isLab": false, "domainCode": "210"}, {"id": "t-114", "index": 114, "timestamp": "07:41:06", "timeSec": 27666, "title": "Built In Tools Follow Along", "isLab": true, "domainCode": "210"}, {"id": "t-115", "index": 115, "timestamp": "07:44:34", "timeSec": 27874, "title": "Custom Tools", "isLab": false, "domainCode": "210"}, {"id": "t-116", "index": 116, "timestamp": "07:45:15", "timeSec": 27915, "title": "MCP Discovery", "isLab": false, "domainCode": "210"}, {"id": "t-117", "index": 117, "timestamp": "07:46:06", "timeSec": 27966, "title": "MCP Discovery Follow Along", "isLab": true, "domainCode": "210"}]}]};
+
+    // State
+    const STORAGE_KEY_PROGRESS = 'ccdv_f_completed_topics_v1';
+    const STORAGE_KEY_NOTES = 'ccdv_f_study_notes_v1';
+    const STORAGE_KEY_THEATER = 'ccdv_f_theater_mode';
+    const STORAGE_KEY_THEME = 'ccdv_f_theme';
+
+    let completedTopics = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY_PROGRESS) || '[]'));
+    let activeTopicId = null;
+    let labsOnlyFilter = false;
+    let searchQuery = '';
+    let player = null;
+    let playerReady = false;
+    let playbackInterval = null;
+    let lastKnownCurrentTime = 0;
+    let lastKnownPlayerState = -1;
+
+    // Check for file:// protocol
+    if (window.location.protocol === 'file:') {
+      const warning = document.getElementById('protocolWarning');
+      if (warning) warning.style.display = 'block';
+    }
+
+    // --- YouTube API Setup & Seeking ---
+    function initPlayer() {
+      if (player) return;
+      try {
+        player = new YT.Player('ytPlayer', {
+          playerVars: {
+            'origin': window.location.origin
+          },
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      } catch (err) {
+        console.warn('YouTube IFrame API init fallback:', err);
+      }
+    }
+
+    if (window.YT && window.YT.Player) {
+      initPlayer();
+    } else {
+      window.onYouTubeIframeAPIReady = initPlayer;
+    }
+
+    // Capture iframe messages for playback state & time
+    window.addEventListener('message', (event) => {
+      try {
+        const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+        if (data && data.event === 'infoDelivery' && data.info) {
+          if (typeof data.info.currentTime === 'number') {
+            lastKnownCurrentTime = Math.floor(data.info.currentTime);
+          }
+          if (typeof data.info.playerState === 'number') {
+            lastKnownPlayerState = data.info.playerState;
+          }
+        }
+      } catch (e) {}
+    });
+
+    function onPlayerReady(event) {
+      playerReady = true;
+      startPlaybackTracker();
+    }
+
+    function onPlayerStateChange(event) {
+      lastKnownPlayerState = event.data;
+      if (event.data === YT.PlayerState.PLAYING) {
+        startPlaybackTracker();
+      } else {
+        stopPlaybackTracker();
+      }
+    }
+
+    function startPlaybackTracker() {
+      if (playbackInterval) clearInterval(playbackInterval);
+      playbackInterval = setInterval(updateActiveTopicFromPlayback, 1000);
+    }
+
+    function stopPlaybackTracker() {
+      if (playbackInterval) {
+        clearInterval(playbackInterval);
+        playbackInterval = null;
+      }
+    }
+
+    function updateActiveTopicFromPlayback() {
+      const currentSec = getCurrentTimeSeconds();
+      
+      // Find matching topic
+      const allTopics = getAllTopics();
+      let matched = allTopics[0];
+      for (let i = 0; i < allTopics.length; i++) {
+        if (allTopics[i].timeSec <= currentSec) {
+          matched = allTopics[i];
+        } else {
+          break;
+        }
+      }
+      if (matched && matched.id !== activeTopicId) {
+        setActiveTopic(matched.id, false);
+      }
+    }
+
+    function getAllTopics() {
+      const res = [];
+      CURRICULUM.domains.forEach(d => {
+        d.topics.forEach(t => res.push(t));
+      });
+      return res;
+    }
+
+    function seekTo(seconds) {
+      lastKnownCurrentTime = seconds;
+      if (player && typeof player.seekTo === 'function') {
+        try {
+          player.seekTo(seconds, true);
+          player.playVideo();
+        } catch (e) {
+          fallbackSeek(seconds);
+        }
+      } else {
+        fallbackSeek(seconds);
+      }
+
+      // Highlight active topic immediately
+      const allTopics = getAllTopics();
+      let matched = allTopics[0];
+      for (let i = 0; i < allTopics.length; i++) {
+        if (allTopics[i].timeSec <= seconds) {
+          matched = allTopics[i];
+        } else {
+          break;
+        }
+      }
+      if (matched) {
+        setActiveTopic(matched.id, true);
+      }
+    }
+
+    function fallbackSeek(seconds) {
+      const iframe = document.getElementById('ytPlayer');
+      if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage(JSON.stringify({
+          event: 'command',
+          func: 'seekTo',
+          args: [seconds, true]
+        }), '*');
+        iframe.contentWindow.postMessage(JSON.stringify({
+          event: 'command',
+          func: 'playVideo',
+          args: []
+        }), '*');
+      }
+    }
+
+    function togglePlayPause() {
+      if (player && typeof player.getPlayerState === 'function') {
+        try {
+          const state = player.getPlayerState();
+          if (state === YT.PlayerState.PLAYING) {
+            player.pauseVideo();
+            showToast('Video Paused');
+          } else {
+            player.playVideo();
+            showToast('Video Playing');
+          }
+          return;
+        } catch (e) {}
+      }
+      const iframe = document.getElementById('ytPlayer');
+      if (iframe && iframe.contentWindow) {
+        if (lastKnownPlayerState === 1) {
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), '*');
+          lastKnownPlayerState = 2;
+          showToast('Video Paused');
+        } else {
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
+          lastKnownPlayerState = 1;
+          showToast('Video Playing');
+        }
+      }
+    }
+
+    function toggleFullscreen() {
+      const wrapper = document.querySelector('.video-wrapper') || document.getElementById('ytPlayer');
+      if (!wrapper) return;
+      if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        if (wrapper.requestFullscreen) {
+          wrapper.requestFullscreen();
+        } else if (wrapper.webkitRequestFullscreen) {
+          wrapper.webkitRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        }
+      }
+    }
+
+    function getCurrentTimeSeconds() {
+      if (player && typeof player.getCurrentTime === 'function') {
+        try {
+          const t = Math.floor(player.getCurrentTime());
+          if (t > 0) return t;
+        } catch (e) {}
+      }
+      return lastKnownCurrentTime || 0;
+    }
+
+    function formatSeconds(sec) {
+      const h = Math.floor(sec / 3600);
+      const m = Math.floor((sec % 3600) / 60);
+      const s = sec % 60;
+      const pad = (n) => String(n).padStart(2, '0');
+      if (h > 0) {
+        return `${pad(h)}:${pad(m)}:${pad(s)}`;
+      }
+      return `${pad(m)}:${pad(s)}`;
+    }
+
+    // --- DOM Rendering for Syllabus ---
+    const domainListContainer = document.getElementById('domainListContainer');
+
+    function renderCurriculum() {
+      domainListContainer.innerHTML = '';
+      const query = searchQuery.trim().toLowerCase();
+      let totalVisibleTopics = 0;
+      let totalVisibleLabs = 0;
+
+      CURRICULUM.domains.forEach((domain, dIdx) => {
+        const domainMatches = domain.title.toLowerCase().includes(query) || domain.code.toLowerCase().includes(query);
+        
+        // Filter topics
+        const visibleTopics = domain.topics.filter(topic => {
+          if (labsOnlyFilter && !topic.isLab) return false;
+          if (!query) return true;
+          return domainMatches || topic.title.toLowerCase().includes(query);
+        });
+
+        if (visibleTopics.length === 0 && (query || labsOnlyFilter)) {
+          return; // Hide empty domains during search/filter
+        }
+
+        totalVisibleTopics += visibleTopics.length;
+        totalVisibleLabs += visibleTopics.filter(t => t.isLab).length;
+
+        // Calculate domain completion
+        const completedCount = domain.topics.filter(t => completedTopics.has(t.id)).length;
+        const totalCount = domain.topics.length;
+        const pct = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
+        const isAllDone = totalCount > 0 && completedCount === totalCount;
+        const isPartiallyDone = completedCount > 0 && completedCount < totalCount;
+
+        // Domain Card
+        const card = document.createElement('div');
+        card.className = 'domain-card';
+        card.id = `domainCard-${domain.code}`;
+
+        // Auto open if query or labs filter active, or first 2 domains initially
+        const isAutoOpen = Boolean(query) || labsOnlyFilter || dIdx < 2;
+        if (isAutoOpen) card.classList.add('open');
+
+        // Domain Header with Domain Completion Checkbox
+        card.innerHTML = `
+          <div class="domain-header" data-code="${domain.code}">
+            <div class="domain-title-group">
+              <input type="checkbox" class="domain-checkbox" data-code="${domain.code}" title="Toggle all topics in domain ${domain.code}" ${isAllDone ? 'checked' : ''}>
+              <span class="domain-code-badge">${domain.code}</span>
+              <span class="domain-title-text" title="${domain.title}">${domain.title}</span>
+            </div>
+            <div class="domain-meta-group">
+              <span class="domain-stats-pill" id="domainStats-${domain.code}">${completedCount}/${totalCount} (${pct}%)</span>
+              <div class="domain-mini-progress" title="${pct}% completed">
+                <div class="domain-mini-progress-fill" id="domainProgressFill-${domain.code}" style="width: ${pct}%;"></div>
+              </div>
+              <span class="domain-chevron">▼</span>
+            </div>
+          </div>
+          <div class="domain-topics" id="domainTopics-${domain.code}"></div>
+        `;
+
+        // Domain checkbox listener
+        const domainCb = card.querySelector(`.domain-checkbox[data-code="${domain.code}"]`);
+        if (domainCb) {
+          domainCb.indeterminate = isPartiallyDone;
+          domainCb.addEventListener('click', (e) => e.stopPropagation());
+          domainCb.addEventListener('change', (e) => {
+            e.stopPropagation();
+            toggleDomainCompleted(domain.code, domainCb.checked);
+          });
+        }
+
+        // Render Topic Rows
+        const topicsContainer = card.querySelector(`#domainTopics-${domain.code}`);
+        visibleTopics.forEach(topic => {
+          const isCompleted = completedTopics.has(topic.id);
+          const isActive = topic.id === activeTopicId;
+
+          const row = document.createElement('div');
+          row.className = `topic-row ${isCompleted ? 'completed' : ''} ${isActive ? 'active' : ''}`;
+          row.id = `topicRow-${topic.id}`;
+          row.setAttribute('data-id', topic.id);
+          row.setAttribute('data-sec', topic.timeSec);
+
+          row.innerHTML = `
+            <div class="topic-check-container">
+              <input type="checkbox" class="topic-checkbox" data-id="${topic.id}" ${isCompleted ? 'checked' : ''} title="Mark topic as completed">
+            </div>
+            <div class="topic-content" data-sec="${topic.timeSec}" data-id="${topic.id}">
+              <div class="topic-info-left">
+                <span class="topic-name" title="${topic.title}">${topic.title}</span>
+                ${topic.isLab ? '<span class="lab-badge">🧪 LAB</span>' : ''}
+                <span class="now-playing-pill">Playing</span>
+              </div>
+              <button class="seek-time-btn" data-sec="${topic.timeSec}" title="Seek to ${topic.timestamp}">
+                ▶ ${topic.timestamp}
+              </button>
+            </div>
+          `;
+
+          // Checkbox toggle
+          const cb = row.querySelector('.topic-checkbox');
+          cb.addEventListener('change', (e) => {
+            e.stopPropagation();
+            toggleTopicCompleted(topic.id, cb.checked);
+          });
+
+          // Row click to seek (clicking anywhere on row except checkbox seeks)
+          row.addEventListener('click', (e) => {
+            if (e.target.closest('.topic-check-container') || e.target.tagName.toLowerCase() === 'input') {
+              return;
+            }
+            seekTo(topic.timeSec);
+          });
+
+          const seekBtn = row.querySelector('.seek-time-btn');
+          seekBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            seekTo(topic.timeSec);
+          });
+
+          topicsContainer.appendChild(row);
+        });
+
+        // Header click toggles open/close
+        const header = card.querySelector('.domain-header');
+        header.addEventListener('click', (e) => {
+          if (e.target.closest('.domain-checkbox')) return;
+          card.classList.toggle('open');
+        });
+
+        domainListContainer.appendChild(card);
+      });
+
+      // Update Filter Counter
+      const filterMatchCount = document.getElementById('filterMatchCount');
+      if (filterMatchCount) {
+        if (query || labsOnlyFilter) {
+          filterMatchCount.textContent = `Showing ${totalVisibleTopics} of 117 topics (${totalVisibleLabs} labs)`;
+        } else {
+          filterMatchCount.textContent = `Showing 117 of 117 topics (28 labs)`;
+        }
+      }
+
+      updateOverallProgress();
+    }
+
+    // Toggle completion for individual topic
+    function toggleTopicCompleted(topicId, isDone) {
+      if (isDone) {
+        completedTopics.add(topicId);
+      } else {
+        completedTopics.delete(topicId);
+      }
+      localStorage.setItem(STORAGE_KEY_PROGRESS, JSON.stringify(Array.from(completedTopics)));
+
+      const row = document.getElementById(`topicRow-${topicId}`);
+      if (row) {
+        row.classList.toggle('completed', isDone);
+        const cb = row.querySelector('.topic-checkbox');
+        if (cb) cb.checked = isDone;
+      }
+
+      // Update domain stats and checkbox
+      const allTopics = getAllTopics();
+      const topicObj = allTopics.find(t => t.id === topicId);
+      if (topicObj) {
+        updateDomainStats(topicObj.domainCode);
+      }
+
+      updateOverallProgress();
+    }
+
+    // Toggle completion for entire domain
+    function toggleDomainCompleted(domainCode, isDone) {
+      const domain = CURRICULUM.domains.find(d => d.code === domainCode);
+      if (!domain) return;
+      domain.topics.forEach(t => {
+        if (isDone) {
+          completedTopics.add(t.id);
+        } else {
+          completedTopics.delete(t.id);
+        }
+        const row = document.getElementById(`topicRow-${t.id}`);
+        if (row) {
+          row.classList.toggle('completed', isDone);
+          const cb = row.querySelector('.topic-checkbox');
+          if (cb) cb.checked = isDone;
+        }
+      });
+      localStorage.setItem(STORAGE_KEY_PROGRESS, JSON.stringify(Array.from(completedTopics)));
+      updateDomainStats(domainCode);
+      updateOverallProgress();
+      showToast(isDone ? `Marked Domain ${domainCode} as completed!` : `Reset Domain ${domainCode}`);
+    }
+
+    // Update Domain Stats UI
+    function updateDomainStats(domainCode) {
+      const domain = CURRICULUM.domains.find(d => d.code === domainCode);
+      if (!domain) return;
+      const comp = domain.topics.filter(t => completedTopics.has(t.id)).length;
+      const tot = domain.topics.length;
+      const pct = tot > 0 ? Math.round((comp / tot) * 100) : 0;
+      const statsEl = document.getElementById(`domainStats-${domain.code}`);
+      const fillEl = document.getElementById(`domainProgressFill-${domain.code}`);
+      if (statsEl) statsEl.textContent = `${comp}/${tot} (${pct}%)`;
+      if (fillEl) fillEl.style.width = `${pct}%`;
+
+      const domainCb = document.querySelector(`.domain-checkbox[data-code="${domain.code}"]`);
+      if (domainCb) {
+        domainCb.checked = (comp === tot && tot > 0);
+        domainCb.indeterminate = (comp > 0 && comp < tot);
+      }
+    }
+
+    // Update Global Progress
+    function updateOverallProgress() {
+      const allTopics = getAllTopics();
+      const totalCount = allTopics.length; // 117
+      const completedCount = completedTopics.size;
+      const pct = Math.round((completedCount / totalCount) * 100);
+
+      const allLabs = allTopics.filter(t => t.isLab);
+      const completedLabs = allLabs.filter(t => completedTopics.has(t.id)).length;
+
+      // Update Elements
+      const overallFill = document.getElementById('overallProgressFill');
+      const overallPct = document.getElementById('overallProgressPct');
+      const overallTopics = document.getElementById('overallProgressTopics');
+      const overallLabs = document.getElementById('overallProgressLabs');
+      const headerProgressText = document.getElementById('headerProgressText');
+
+      if (overallFill) overallFill.style.width = `${pct}%`;
+      if (overallPct) overallPct.textContent = `${pct}%`;
+      if (overallTopics) overallTopics.textContent = `${completedCount} / ${totalCount} Topics Completed`;
+      if (overallLabs) overallLabs.textContent = `${completedLabs} / ${allLabs.length} Labs Done`;
+      if (headerProgressText) headerProgressText.textContent = `${completedCount} / ${totalCount} (${pct}%)`;
+    }
+
+    // Set Active Topic
+    function setActiveTopic(topicId, shouldScroll) {
+      if (activeTopicId === topicId) return;
+
+      // Remove old active
+      if (activeTopicId) {
+        const oldRow = document.getElementById(`topicRow-${activeTopicId}`);
+        if (oldRow) oldRow.classList.remove('active');
+      }
+
+      activeTopicId = topicId;
+      const allTopics = getAllTopics();
+      const topic = allTopics.find(t => t.id === topicId);
+
+      if (topic) {
+        const nowPlayingTitle = document.getElementById('nowPlayingTitle');
+        if (nowPlayingTitle) {
+          nowPlayingTitle.textContent = `[${topic.domainCode}] ${topic.title} (${topic.timestamp})`;
+        }
+
+        const newRow = document.getElementById(`topicRow-${topicId}`);
+        if (newRow) {
+          newRow.classList.add('active');
+          const parentCard = newRow.closest('.domain-card');
+          if (parentCard && !parentCard.classList.contains('open')) {
+            parentCard.classList.add('open');
+          }
+          if (shouldScroll) {
+            newRow.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        }
+      }
+    }
+
+    // Get navigable topics respecting current filter/search
+    function getNavigableTopics() {
+      const query = searchQuery.trim().toLowerCase();
+      if (!query && !labsOnlyFilter) {
+        return getAllTopics();
+      }
+      const list = [];
+      CURRICULUM.domains.forEach(d => {
+        const domainMatches = d.title.toLowerCase().includes(query) || d.code.toLowerCase().includes(query);
+        d.topics.forEach(t => {
+          if (labsOnlyFilter && !t.isLab) return;
+          if (!query || domainMatches || t.title.toLowerCase().includes(query)) {
+            list.push(t);
+          }
+        });
+      });
+      return list.length > 0 ? list : getAllTopics();
+    }
+
+    // --- Search & Filter Listeners ---
+    const topicSearch = document.getElementById('topicSearch');
+    const searchClearBtn = document.getElementById('searchClearBtn');
+    const filterLabsBtn = document.getElementById('filterLabsBtn');
+
+    topicSearch.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      searchClearBtn.style.display = searchQuery ? 'block' : 'none';
+      renderCurriculum();
+    });
+
+    searchClearBtn.addEventListener('click', () => {
+      topicSearch.value = '';
+      searchQuery = '';
+      searchClearBtn.style.display = 'none';
+      renderCurriculum();
+      topicSearch.focus();
+    });
+
+    filterLabsBtn.addEventListener('click', () => {
+      labsOnlyFilter = !labsOnlyFilter;
+      filterLabsBtn.classList.toggle('active', labsOnlyFilter);
+      renderCurriculum();
+    });
+
+    // Expand / Collapse All
+    document.getElementById('expandAllBtn').addEventListener('click', () => {
+      document.querySelectorAll('.domain-card').forEach(c => c.classList.add('open'));
+    });
+
+    document.getElementById('collapseAllBtn').addEventListener('click', () => {
+      document.querySelectorAll('.domain-card').forEach(c => c.classList.remove('open'));
+    });
+
+    // Reset Progress
+    document.getElementById('resetProgressBtn').addEventListener('click', () => {
+      if (confirm('Are you sure you want to reset all topic and lab progress? Your study notes will NOT be deleted.')) {
+        completedTopics.clear();
+        localStorage.removeItem(STORAGE_KEY_PROGRESS);
+        renderCurriculum();
+        showToast('All course progress has been reset.');
+      }
+    });
+
+    // Prev / Next Topic Navigation
+    document.getElementById('prevTopicBtn').addEventListener('click', () => {
+      const topics = getNavigableTopics();
+      const currIdx = topics.findIndex(t => t.id === activeTopicId);
+      if (currIdx > 0) {
+        seekTo(topics[currIdx - 1].timeSec);
+      } else if (topics.length > 0) {
+        seekTo(topics[0].timeSec);
+      }
+    });
+
+    document.getElementById('nextTopicBtn').addEventListener('click', () => {
+      const topics = getNavigableTopics();
+      const currIdx = topics.findIndex(t => t.id === activeTopicId);
+      const curSec = getCurrentTimeSeconds();
+      const next = currIdx >= 0
+        ? topics[currIdx + 1]
+        : topics.find(t => t.timeSec > curSec);
+      if (next) seekTo(next.timeSec);
+    });
+
+    document.getElementById('locateTopicBtn').addEventListener('click', () => {
+      if (activeTopicId) {
+        let row = document.getElementById(`topicRow-${activeTopicId}`);
+        if (!row) {
+          // If filtered out, clear search & lab filter to reveal
+          topicSearch.value = '';
+          searchQuery = '';
+          searchClearBtn.style.display = 'none';
+          labsOnlyFilter = false;
+          filterLabsBtn.classList.remove('active');
+          renderCurriculum();
+          row = document.getElementById(`topicRow-${activeTopicId}`);
+        }
+        if (row) {
+          const parent = row.closest('.domain-card');
+          if (parent) parent.classList.add('open');
+          row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          row.style.outline = '2px solid var(--accent-blue)';
+          setTimeout(() => { row.style.outline = 'none'; }, 1500);
+          showToast('Located current playing topic');
+        }
+      }
+    });
+
+    // --- Workspace Tabs ---
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    const notesToolbar = document.getElementById('notesToolbar');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        const targetId = btn.getAttribute('data-tab');
+        const targetContent = document.getElementById(targetId);
+        if (targetContent) targetContent.classList.add('active');
+        if (notesToolbar) {
+          notesToolbar.style.display = targetId === 'notesTab' ? 'flex' : 'none';
+        }
+      });
+    });
+
+    // --- Interactive Markdown Notes ---
+    const notesInput = document.getElementById('notesInput');
+    const notesPreviewMode = document.getElementById('notesPreviewMode');
+    const togglePreviewBtn = document.getElementById('togglePreviewBtn');
+    const previewBtnText = document.getElementById('previewBtnText');
+    const insertTimestampBtn = document.getElementById('insertTimestampBtn');
+    const exportNotesBtn = document.getElementById('exportNotesBtn');
+    const copyNotesBtn = document.getElementById('copyNotesBtn');
+    const clearNotesBtn = document.getElementById('clearNotesBtn');
+    const notesWordCount = document.getElementById('notesWordCount');
+
+    let isPreview = false;
+
+    // Load initial notes
+    const savedNotes = localStorage.getItem(STORAGE_KEY_NOTES) || 
+`# CCDV-F Study Notes
+
+- **Course:** Claude Certified Developer - Foundations (CCDV-F)
+- **Exam Focus:** Agentic loop, Tool calling, Prompt Caching, MCP Architecture, Hooks, Sandboxing
+
+### Key Takeaways & Deep-Links
+- [01:11:47] — Agent SDK Follow Along
+- [02:01:14] — Claude Code Image Reasoning Follow Along
+- [02:05:43] — Prompt Caching Rules & Pricing
+- [03:06:51] — Claude Rules Follow Along
+- [07:25:44] — MCP with Claude Code
+
+---
+*(Add your notes here. Use 'Insert Timestamp' button or write [hh:mm:ss] to create clickable seek links!)*
+`;
+
+    notesInput.value = savedNotes;
+    updateNotesStats();
+
+    // Autosave notes
+    notesInput.addEventListener('input', () => {
+      localStorage.setItem(STORAGE_KEY_NOTES, notesInput.value);
+      updateNotesStats();
+    });
+
+    function updateNotesStats() {
+      const text = notesInput.value.trim();
+      const words = text ? text.split(/\s+/).length : 0;
+      const chars = text.length;
+      if (notesWordCount) {
+        notesWordCount.textContent = `${words} words • ${chars} characters`;
+      }
+    }
+
+    // Insert Current Timestamp
+    function insertCurrentTimestamp() {
+      // If preview is active, switch to edit mode
+      if (isPreview) {
+        togglePreview();
+      }
+      // If user is on another tab, switch to notes tab
+      const notesTabBtn = document.querySelector('.tab-btn[data-tab="notesTab"]');
+      if (notesTabBtn && !notesTabBtn.classList.contains('active')) {
+        notesTabBtn.click();
+      }
+
+      const sec = getCurrentTimeSeconds();
+      const ts = formatSeconds(sec);
+      const tag = `[${ts}]`;
+      const start = notesInput.selectionStart ?? notesInput.value.length;
+      const end = notesInput.selectionEnd ?? start;
+      const text = notesInput.value;
+
+      notesInput.value = text.substring(0, start) + tag + ' ' + text.substring(end);
+      const newCursor = start + tag.length + 1;
+      notesInput.focus();
+      notesInput.setSelectionRange(newCursor, newCursor);
+
+      localStorage.setItem(STORAGE_KEY_NOTES, notesInput.value);
+      updateNotesStats();
+      showToast(`Inserted timestamp: ${tag}`);
+    }
+    insertTimestampBtn.addEventListener('click', insertCurrentTimestamp);
+
+    // Markdown Renderer with Deep-Link Timestamp Support & Code Isolation
+    function renderMarkdown(md) {
+      // 1. Mask code blocks
+      const codeBlocks = [];
+      let html = md.replace(/```([\s\S]*?)```/g, (match, code) => {
+        codeBlocks.push(code);
+        return `\n\n@@CODEBLOCK_${codeBlocks.length - 1}@@\n\n`;
+      });
+
+      // 2. Mask inline code
+      const inlineCodes = [];
+      html = html.replace(/`([^`\n]+)`/g, (match, code) => {
+        inlineCodes.push(code);
+        return `@@INLINECODE_${inlineCodes.length - 1}@@`;
+      });
+
+      // 3. Escape raw HTML entities
+      html = html
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
+      // 4. Horizontal rules
+      html = html.replace(/^(?:---|---|\*\*\*|___)\s*$/gim, '\n\n<hr>\n\n');
+
+      // 5. Headings
+      html = html.replace(/^### (.*$)/gim, '\n\n<h3>$1</h3>\n\n');
+      html = html.replace(/^## (.*$)/gim, '\n\n<h2>$1</h2>\n\n');
+      html = html.replace(/^# (.*$)/gim, '\n\n<h1>$1</h1>\n\n');
+
+      // 6. Blockquotes
+      html = html.replace(/^> (.*$)/gim, '\n\n<blockquote>$1</blockquote>\n\n');
+
+      // 7. Markdown Links: [text](https://...)
+      html = html.replace(/\[([^\]]+)\]\((https?:\/\/[^\s\)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+
+      // 8. Clickable Timestamps
+      const tsRegex = /(?:\[\s*|\b)((?:\d{1,2}:)?\d{1,2}:\d{2})(?:\s*\]|\b)/g;
+      html = html.replace(tsRegex, (match, ts) => {
+        const parts = ts.split(':').map(Number);
+        let sec = 0;
+        if (parts.length === 3) {
+          sec = parts[0] * 3600 + parts[1] * 60 + parts[2];
+        } else if (parts.length === 2) {
+          sec = parts[0] * 60 + parts[1];
+        }
+        return `<button class="ts-chip" data-sec="${sec}" title="Seek to ${ts}">▶ ${ts}</button>`;
+      });
+
+      // 9. Bold & Italic
+      html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+      html = html.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+
+      // 10. Lists: Process line-by-line for clean grouping
+      const lines = html.split('\n');
+      const processedLines = [];
+      let inUl = false;
+      let inOl = false;
+
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        const isUl = /^\s*[-*]\s+(.*)$/.test(line);
+        const isOl = /^\s*\d+\.\s+(.*)$/.test(line);
+
+        if (isUl) {
+          if (inOl) { processedLines.push('</ol>\n'); inOl = false; }
+          if (!inUl) { processedLines.push('\n<ul>'); inUl = true; }
+          processedLines.push(line.replace(/^\s*[-*]\s+(.*)$/, '<li>$1</li>'));
+        } else if (isOl) {
+          if (inUl) { processedLines.push('</ul>\n'); inUl = false; }
+          if (!inOl) { processedLines.push('\n<ol>'); inOl = true; }
+          processedLines.push(line.replace(/^\s*\d+\.\s+(.*)$/, '<li>$1</li>'));
+        } else {
+          if (inUl) { processedLines.push('</ul>\n'); inUl = false; }
+          if (inOl) { processedLines.push('</ol>\n'); inOl = false; }
+          processedLines.push(line);
+        }
+      }
+      if (inUl) processedLines.push('</ul>\n');
+      if (inOl) processedLines.push('</ol>\n');
+
+      html = processedLines.join('\n');
+
+      // 11. Restore Code Blocks & Inline Code
+      codeBlocks.forEach((code, idx) => {
+        const escaped = code
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
+        html = html.replace(`@@CODEBLOCK_${idx}@@`, `<pre><code>${escaped}</code></pre>`);
+      });
+
+      inlineCodes.forEach((code, idx) => {
+        const escaped = code
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
+        html = html.replace(`@@INLINECODE_${idx}@@`, `<code>${escaped}</code>`);
+      });
+
+      // 12. Paragraph separation
+      const blocks = html.split(/\n{2,}/);
+      const formatted = blocks.map(block => {
+        const trimmed = block.trim();
+        if (!trimmed) return '';
+        if (/^<(?:h[1-6]|ul|ol|pre|blockquote|hr)/i.test(trimmed)) {
+          return trimmed;
+        }
+        return `<p>${trimmed.replace(/\n/g, '<br>')}</p>`;
+      }).filter(Boolean);
+
+      return formatted.join('\n');
+    }
+
+    // Toggle Preview
+    function togglePreview() {
+      isPreview = !isPreview;
+      if (isPreview) {
+        notesPreviewMode.innerHTML = renderMarkdown(notesInput.value);
+        notesInput.style.display = 'none';
+        notesPreviewMode.style.display = 'block';
+        previewBtnText.textContent = 'Edit';
+        togglePreviewBtn.classList.add('btn-active');
+
+        // Bind clickable timestamp chips in preview
+        notesPreviewMode.querySelectorAll('.ts-chip').forEach(chip => {
+          chip.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sec = parseInt(chip.getAttribute('data-sec'), 10);
+            if (!isNaN(sec)) {
+              seekTo(sec);
+            }
+          });
+        });
+      } else {
+        notesPreviewMode.style.display = 'none';
+        notesInput.style.display = 'block';
+        previewBtnText.textContent = 'Preview';
+        togglePreviewBtn.classList.remove('btn-active');
+        notesInput.focus();
+      }
+    }
+    togglePreviewBtn.addEventListener('click', togglePreview);
+
+    // Export Notes to Markdown
+    exportNotesBtn.addEventListener('click', () => {
+      const now = new Date().toISOString().replace('T', ' ').substring(0, 19);
+      const allTopics = getAllTopics();
+      const pct = Math.round((completedTopics.size / allTopics.length) * 100);
+
+      const header = 
+`---
+title: Claude Certified Developer - Foundations (CCDV-F) Study Notes
+exported_at: ${now}
+topics_completed: ${completedTopics.size}/${allTopics.length} (${pct}%)
+video_url: https://www.youtube.com/watch?v=C_1QKZAcJjk
+instructor: Andrew Brown (ExamPro)
+---
+
+`;
+      const fullContent = header + notesInput.value;
+      const blob = new Blob([fullContent], { type: 'text/markdown;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `CCDV-F_Study_Notes_${now.substring(0, 10)}.md`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast('Study notes exported to .md successfully!');
+    });
+
+    // Copy Notes with robust fallback
+    copyNotesBtn.addEventListener('click', async () => {
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(notesInput.value);
+          showToast('Notes copied to clipboard!');
+          return;
+        }
+      } catch (err) {}
+      // Fallback
+      try {
+        notesInput.select();
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        showToast('Notes copied to clipboard!');
+      } catch (e2) {
+        showToast('Failed to copy notes.');
+      }
+    });
+
+    // Clear Notes
+    clearNotesBtn.addEventListener('click', () => {
+      if (confirm('Are you sure you want to clear your study notes?')) {
+        notesInput.value = '';
+        localStorage.removeItem(STORAGE_KEY_NOTES);
+        updateNotesStats();
+        if (isPreview) togglePreview();
+        showToast('Notes cleared.');
+      }
+    });
+
+    // --- Theme & Theater Mode ---
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const theaterBtn = document.getElementById('theaterBtn');
+
+    function setTheme(theme) {
+      if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        themeIcon.textContent = '🌙';
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        themeIcon.textContent = '☀️';
+      }
+      localStorage.setItem(STORAGE_KEY_THEME, theme);
+    }
+
+    const initialTheme = localStorage.getItem(STORAGE_KEY_THEME) || 'dark';
+    setTheme(initialTheme);
+
+    themeBtn.addEventListener('click', () => {
+      const active = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      setTheme(active);
+    });
+
+    function toggleTheater() {
+      document.body.classList.toggle('theater-mode');
+      const isTheater = document.body.classList.contains('theater-mode');
+      localStorage.setItem(STORAGE_KEY_THEATER, isTheater ? 'true' : 'false');
+      theaterBtn.classList.toggle('btn-active', isTheater);
+    }
+    theaterBtn.addEventListener('click', toggleTheater);
+    if (localStorage.getItem(STORAGE_KEY_THEATER) === 'true') {
+      document.body.classList.add('theater-mode');
+      theaterBtn.classList.add('btn-active');
+    }
+
+    // --- Keyboard Shortcuts Global Listener ---
+    window.addEventListener('keydown', (e) => {
+      const tag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
+      const isInput = ['input', 'textarea', 'select', 'button', 'a'].includes(tag) ||
+        (document.activeElement && document.activeElement.isContentEditable);
+
+      // Alt+T shortcut for timestamp insertion works anywhere
+      if (e.altKey && e.code === 'KeyT') {
+        e.preventDefault();
+        insertCurrentTimestamp();
+        return;
+      }
+
+      if (isInput) return;
+
+      if (e.key === 't' || e.key === 'T') {
+        toggleTheater();
+      } else if (e.key === 'd' || e.key === 'D') {
+        const active = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        setTheme(active);
+      } else if (e.key === ' ' || e.key === 'k' || e.key === 'K') {
+        e.preventDefault();
+        togglePlayPause();
+      } else if (e.key === 'f' || e.key === 'F') {
+        e.preventDefault();
+        toggleFullscreen();
+      } else if (e.key === 'j' || e.key === 'J') {
+        const current = getCurrentTimeSeconds();
+        seekTo(Math.max(0, current - 10));
+      } else if (e.key === 'l' || e.key === 'L') {
+        const current = getCurrentTimeSeconds();
+        seekTo(current + 10);
+      }
+    });
+
+    // Toast Notification Helper
+    function showToast(message) {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.innerHTML = `<span>✨</span><span>${message}</span>`;
+      container.appendChild(toast);
+      
+      requestAnimationFrame(() => {
+        toast.classList.add('show');
+      });
+
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+          if (toast.parentElement) toast.parentElement.removeChild(toast);
+        }, 300);
+      }, 2500);
+    }
+
+    // Initial Render
+    renderCurriculum();
+    // Set initial topic
+    const firstTopic = getAllTopics()[0];
+    if (firstTopic) setActiveTopic(firstTopic.id, false);
+  </script>
+  <!-- Load YouTube IFrame API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
